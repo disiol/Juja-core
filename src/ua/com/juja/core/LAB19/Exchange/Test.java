@@ -1,4 +1,4 @@
-package ua.com.juja.core.LAB19;
+package ua.com.juja.core.LAB19.Exchange;
 
 /**
  * Created by Denis Oleynyk on 11.07.17.
@@ -7,8 +7,16 @@ package ua.com.juja.core.LAB19;
 
 public class Test {
     public static void main(String[] args) {
+        System.out.println("Test1");
         Test1();
+
+        System.out.println();
+        System.out.println("Test2");
+
         Test2();
+        System.out.println();
+
+        System.out.println("Test3");
         Test3();
     }
 
@@ -16,7 +24,7 @@ public class Test {
         int testMoney = 5;
         int expectedValue = 4;
 
-        int actualValue = ExchangeMoney.exchangeAmountOfCoinsBrutForce(testMoney);
+        int actualValue = RecursiveExchangeMoney.exchangeAmountOfCoinsBrutForce(testMoney);
 
         if (actualValue != expectedValue)
             throw new AssertionError("Money= " + testMoney + "  number of variants=  " + expectedValue +
@@ -29,7 +37,7 @@ public class Test {
         int testMoney = 10;
         int expectedValue = 11;
 
-        int actualValue = ExchangeMoney.exchangeAmountOfCoinsBrutForce(testMoney);
+        int actualValue = RecursiveExchangeMoney.exchangeAmountOfCoinsBrutForce(testMoney);
 
         if (actualValue != expectedValue)
             throw new AssertionError("Money= " + testMoney + "  number of variants=  " + expectedValue +
@@ -42,7 +50,7 @@ public class Test {
         int testMoney = 100;
         int expectedValue = 3953;
 
-        int actualValue = ExchangeMoney.exchangeAmountOfCoinsBrutForce(testMoney);
+        int actualValue = RecursiveExchangeMoney.exchangeAmountOfCoinsBrutForce(testMoney);
 
         if (actualValue != expectedValue)
             throw new AssertionError("Money= " + testMoney + "  number of variants=  " + expectedValue +

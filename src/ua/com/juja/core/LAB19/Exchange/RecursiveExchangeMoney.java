@@ -1,4 +1,4 @@
-package ua.com.juja.core.LAB19;
+package ua.com.juja.core.LAB19.Exchange;
 
 /**
  * Created by Denis Oleynyk on 11.07.17.
@@ -19,9 +19,34 @@ public class RecursiveExchangeMoney {
     final static int[] exchangeMonets = {1, 2, 5, 10, 25, 50};
 
     public static int exchangeAmountOfCoinsBrutForce(int amountForExchange) {
+        int exchangeСounter = 0;
+        int leght = exchangeMonets.length;
+
+        for (int i = 0; i < leght; i++) {
+            if (amountForExchange / exchangeMonets[i] == 0) {
+                exchangeСounter++;
+                symResult(exchangeMonets[i], exchangeMonets[i + 1], amountForExchange, leght, exchangeMonets);
+            }
+
+        }
 
         return amountForExchange;
 
+    }
+
+    private static int symResult(int exchangeMonet, int exchangeMonet1, int amountForExchange, int leght, int[] exchangeMonets) {
+        int sum = 0;
+        while (sum < exchangeMonet) {
+            if (exchangeMonet1 + 1 <= leght) {
+                sum = exchangeMonet + exchangeMonets[exchangeMonet1 + 1];
+            }
+
+        }
+
+        if (sum / exchangeMonet == 0) {
+            amountForExchange++;
+        }
+        return amountForExchange;
     }
 
 }

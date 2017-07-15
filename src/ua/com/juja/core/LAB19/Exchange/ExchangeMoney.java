@@ -1,4 +1,4 @@
-package ua.com.juja.core.LAB19;
+package ua.com.juja.core.LAB19.Exchange;
 
 /**
  * Created by Denis Oleynyk on 11.07.17.
