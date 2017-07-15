@@ -8,8 +8,8 @@ public class Parser2 {
     public static void main(String[] args) {
         System.out.println(eval("123"));
         System.out.println(eval("2*3"));
-        System.out.println(eval("2*(1+3)"));
-        System.out.println(eval("1+(5-2*(13/6))"));
+        System.out.println(eval("(1+3)*2"));
+        System.out.println(eval("((13/6)*2-5)+1"));
     }
 
     public static int eval(String expr) {
