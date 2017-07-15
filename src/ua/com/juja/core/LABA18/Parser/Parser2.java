@@ -27,7 +27,7 @@ public class Parser2 {
                 } else {
                     int leftOperand = Integer.valueOf(expr.substring(from - 1, pos +1));
                     char operation = expr.charAt(pos);
-                    int rightOperand = eval(expr, pos , to);
+                    int rightOperand = eval(expr, pos, to);
                     switch (operation) {
                         case '+':
                             return leftOperand + rightOperand;
