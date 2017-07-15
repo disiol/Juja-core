@@ -33,6 +33,7 @@ public class ParserTest2 {
         Assertions.assertEquals(((13/6)*2-5)+1, Parser2.eval("((13/6)*2-5)+1"),">> ((13/6)*2-5)+1");
 
     }
+    @Test
     public void Test5() {
         Parser1 parser1 = new Parser1();
         Assertions.assertEquals((10-3), Parser1.eval("(10-3) * 1"));
