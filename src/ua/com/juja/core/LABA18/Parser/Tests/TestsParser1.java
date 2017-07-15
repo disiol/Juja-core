@@ -27,12 +27,12 @@ public class TestsParser1 {
     @Test
     public void Test3() {
         Parser1 parser1 = new Parser1();
-        Assertions.assertEquals(8, Parser1.eval("123"));
+        Assertions.assertEquals(8, Parser1.eval("2*(1+3)"));
 
     }@Test
     public void Test4() {
         Parser1 parser1 = new Parser1();
-        Assertions.assertEquals(2, Parser1.eval("123"));
+        Assertions.assertEquals(2, Parser1.eval("1+(5-2*(13/6))"));
 
     }
 }
