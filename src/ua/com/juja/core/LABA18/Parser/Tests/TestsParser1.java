@@ -13,26 +13,34 @@ public class TestsParser1 {
     @Test
     public void Test1() {
         Parser1 parser1 = new Parser1();
-        Assertions.assertEquals(123, Parser1.eval("123"),">> 123 = ");
+        Assertions.assertEquals(123, Parser1.eval("123"), ">> 123 = ");
 
     }
 
     @Test
     public void Test2() {
         Parser1 parser1 = new Parser1();
-        Assertions.assertEquals(6, Parser1.eval("2*3"));
+        Assertions.assertEquals(2 * 3, Parser1.eval("2*3"));
 
     }
 
     @Test
     public void Test3() {
         Parser1 parser1 = new Parser1();
-        Assertions.assertEquals(8, Parser1.eval("2*(1+3)"));
+        Assertions.assertEquals(2 * (1 + 3), Parser1.eval("2*(1+3)"));
 
-    }@Test
+    }
+
+    @Test
     public void Test4() {
         Parser1 parser1 = new Parser1();
-        Assertions.assertEquals(2, Parser1.eval("1+(5-2*(13/6))"));
+        Assertions.assertEquals(1 + (5 - 2 * (13 / 6)), Parser1.eval("1+(5-2*(13/6))"));
+
+    }
+    @Test
+    public void Test5() {
+        Parser1 parser1 = new Parser1();
+        Assertions.assertEquals((10-3), Parser1.eval("1*(10-3)"));
 
     }
 }

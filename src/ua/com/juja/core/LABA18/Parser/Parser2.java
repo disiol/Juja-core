@@ -25,9 +25,9 @@ public class Parser2 {
                 if (Character.isDigit(expr.charAt(pos))) {
                     pos++;
                 } else {
-                    int leftOperand = Integer.valueOf(expr.substring(from, pos));
+                    int leftOperand = Integer.valueOf(expr.substring(from - 1, pos +1));
                     char operation = expr.charAt(pos);
-                    int rightOperand = eval(expr, pos + 1, to);
+                    int rightOperand = eval(expr, pos , to);
                     switch (operation) {
                         case '+':
                             return leftOperand + rightOperand;
