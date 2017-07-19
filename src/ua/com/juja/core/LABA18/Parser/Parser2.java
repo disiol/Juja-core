@@ -5,29 +5,24 @@ package ua.com.juja.core.LABA18.Parser;
  * mail: deoniisii@gmail.com
  */
 public class Parser2 {
-    public static void main(String[] args) {
-        System.out.println(eval("123"));
-        System.out.println(eval("2*3"));
-        System.out.println(eval("(1+3)*2"));
-        System.out.println(eval("((13/6)*2-5)+1"));
-    }
-
     public static int eval(String expr) {
-        return eval(expr, 0, expr.length());
+        return eval(expr, expr.length() - 1, 0);
     }
 
     private static int eval(String expr, int from, int to) {
-        if (expr.charAt(from) == '(') {
-            return eval(expr, from + 1, to - 1);
+        if (expr.charAt(from) == ')') {
+            return eval(expr, from - 1, to + 1);
         } else {
             int pos = from;
-            while (pos < to) {
+
+            while (pos > to) {
                 if (Character.isDigit(expr.charAt(pos))) {
-                    pos++;
+                    pos--;
                 } else {
-                    int leftOperand = Integer.valueOf(expr.substring(from - 1, pos +1));
+                    int rightOperand = Integer.valueOf(expr.substring(pos + 1, from+1));
                     char operation = expr.charAt(pos);
-                    int rightOperand = eval(expr, pos, to);
+                    int leftOperand = eval(expr, pos - 1, to);
+
                     switch (operation) {
                         case '+':
                             return leftOperand + rightOperand;
@@ -40,7 +35,7 @@ public class Parser2 {
                     }
                 }
             }
-            return Integer.valueOf(expr.substring(from, to));
+            return Integer.valueOf(expr.substring(to, from + 1));
         }
     }
 }
