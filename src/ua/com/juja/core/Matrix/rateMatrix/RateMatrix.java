@@ -1,4 +1,4 @@
-package ua.com.juja.core.LAB21.rateMatrix;
+package ua.com.juja.core.Matrix.rateMatrix;
 
 /**
  * Created by Denis Oleynyk on 24.07.17.
