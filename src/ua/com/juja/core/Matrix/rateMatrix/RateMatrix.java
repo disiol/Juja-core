@@ -5,4 +5,7 @@ package ua.com.juja.core.Matrix.rateMatrix;
  * mail: deoniisii@gmail.com
  */
 public class RateMatrix {
+    public static int[][] rotateClockwise(int[][] oldArray) {
+        return null;
+    }
 }
