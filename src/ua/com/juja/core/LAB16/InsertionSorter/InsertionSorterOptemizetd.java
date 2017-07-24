@@ -1,4 +1,4 @@
-package ua.com.juja.core.LABA16.InsertionSorter;
+package ua.com.juja.core.LAB16.InsertionSorter;
 
 import java.util.Arrays;
 
@@ -32,23 +32,17 @@ import java.util.Arrays;
  * 2. Найдя позицию - смещайте всю часть массива за один вызов (System.arraycopy(...)).
  * В моих экспериментах эти две оптимизации ускорили сортировку в 2.2-2.6 раза. Скорость сортировки измерял данным кодом
  */
-public class InsertionSorterOptemizetd2 {
+public class InsertionSorterOptemizetd {
     public static void sort(int[] arr) {
         for (int k = 1; k < arr.length; k++) {
             int newElement = arr[k];
             int location = k - 1;
-            int counterShift = 0;
-
-            if (location >= 0 && arr[location] > newElement) {
-               Arrays.binarySearch(arr,newElement);
-                counterShift++;
+            while (location >= 0 && arr[location] > newElement) {
+                arr[location + 1] = arr[location];
                 location--;
             }
-
-            int srcPos = location + 1;
-
-            System.arraycopy(arr, srcPos, arr, srcPos + 1, counterShift);
-            arr[srcPos] = newElement;
+            arr[location + 1] = newElement;
         }
     }
 }
+

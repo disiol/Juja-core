@@ -1,6 +1,8 @@
+package ua.com.juja.core.LAB18.Parser.Tests;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ua.com.juja.core.LABA18.Parser.Parser1;
+import ua.com.juja.core.LAB18.Parser.Parser1;
 
 
 /**

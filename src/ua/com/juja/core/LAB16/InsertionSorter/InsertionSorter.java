@@ -1,4 +1,4 @@
-package ua.com.juja.core.LABA16.InsertionSorter;
+package ua.com.juja.core.LAB16.InsertionSorter;
 
 /**
  * Created by Denis Oleynyk on 06.07.17.

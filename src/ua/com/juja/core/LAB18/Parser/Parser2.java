@@ -1,4 +1,4 @@
-package ua.com.juja.core.LABA18.Parser;
+package ua.com.juja.core.LAB18.Parser;
 
 /**
  * Created by Denis Oleynyk on 15.07.17.

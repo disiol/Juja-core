@@ -1,4 +1,4 @@
-package ua.com.juja.core.labb12.ArrayUtils;
+package ua.com.juja.core.LAB12.ArrayUtils;
 
 /**
  * Created by Denis Oleynyk on 18.06.17.

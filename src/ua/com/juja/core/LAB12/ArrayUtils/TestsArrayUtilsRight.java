@@ -1,7 +1,6 @@
-package ua.com.juja.core.labb12.ArrayUtils;
+package ua.com.juja.core.LAB12.ArrayUtils;
 
 import ua.com.juja.core.lab13.ArrayUtils.ArrayUtilsLeft;
-import ua.com.juja.core.labb12.ArrayUtils.ArrayUtilsRight;
 
 import java.util.Arrays;
 

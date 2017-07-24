@@ -1,4 +1,4 @@
-package ua.com.juja.core.LABA14.BubbleSorter;
+package ua.com.juja.core.LAB14.BubbleSorter;
 
 import java.util.Arrays;
 

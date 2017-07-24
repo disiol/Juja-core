@@ -1,6 +1,5 @@
-package ua.com.juja.core.LABA16.InsertionSorter;
+package ua.com.juja.core.LAB16.InsertionSorter;
 
-import java.util.Arrays;
 import java.util.Random;
 
 /**
