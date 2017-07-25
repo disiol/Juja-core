@@ -10,10 +10,12 @@ public class RateMatrix {
         // 1) проверяет, что метод получил "квадратную" матрицу (допустимые размеры 1x1, 2x2, 3x3, ...) иначе возвращать null;
         // (возможные ошибки: null вместо массива, одна из размерностей = 0, длина не равна ширине, есть строки разной длины,
         // есть строки с null вместо одномерных массивов)
-
-        if (oldArray.length != oldArray[0].length){
-            return null;
+        for (int i = 0; i < oldArray.length; i++) {
+            if (oldArray.length != oldArray[0].length || oldArray == null){
+                return null;
+            }
         }
+
 
 
 
