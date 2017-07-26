@@ -1,4 +1,4 @@
-package ua.com.juja.core.Matrix.matrixMultiplication;
+package ua.com.juja.core.Matrix.LAB21.matrixMultiplication;
 
 /**
  * Created by Denis Oleynyk on 19.07.17.
