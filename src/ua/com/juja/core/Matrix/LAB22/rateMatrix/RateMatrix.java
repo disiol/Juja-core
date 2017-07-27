@@ -5,12 +5,20 @@ package ua.com.juja.core.Matrix.LAB22.rateMatrix;
  * mail: deoniisii@gmail.com
  */
 public class RateMatrix {
+    public static void main(String[] args) {
+        int[][] oldArray = {new int[]{1, 2, 3}, new int[]{4, 5, 6}, new int[]{7, 8, 9}};
+
+        rotateClockwise(oldArray);
+
+    }
+
+
     public static int[][] rotateClockwise(int[][] oldArray) {
         int columnLength = oldArray.length;
         int mideleSkver = oldArray.length / 2;
-        int newArray[][] = new int[0][];
+        int newArray[][] = new int[columnLength][];
 
-        //TODO
+
         // 1) проверяет, что метод получил "квадратную" матрицу (допустимые размеры 1x1, 2x2, 3x3, ...) иначе возвращать null;
         // (возможные ошибки: null вместо массива, одна из размерностей = 0, длина не равна ширине, есть строки разной длины,
         // есть строки с null вместо одномерных массивов)
@@ -18,13 +26,18 @@ public class RateMatrix {
             return null;
         } else {
 
-            for (int i = 0; i < mideleSkver; i++) {
-                for (int j = 0; j < mideleSkver; j++) {
-                    int tmp = oldArray[i][j];
-                    oldArray[i][j] = oldArray[i + mideleSkver - 1][j + mideleSkver - 1];
-
-                }
+            for (int i = 0; i < columnLength - 1; i++) {
+                for (int j = 0; j < oldArray[i].length - 1; j++)
+                    newArray[i][j] = oldArray[columnLength - j][i];
             }
+            for (int i = 0; i < columnLength; i++) {
+                for (int j = 0; j < columnLength; j++) {
+                    System.out.printf("%3d ", newArray[i][j]);
+                }
+                System.out.print("\n");
+            }
+
+
         }
 
 
@@ -44,32 +57,29 @@ public class RateMatrix {
         //                      [9, 6, 3]] ...
 
 
-        for (int i = 0; i < mideleSkver; i++) {
-            for (int j = 0; j < mideleSkver; j++) {
-                int tmp = oldArray[i][j];
-                oldArray[i][j] = oldArray[i + mideleSkver - 1][j + mideleSkver - 1];
-
-            }
-
-
-            //print
-            for (int f = 0; f < columnLength; f++) {
-
-
-                System.out.println(oldArray[f][f]);
-
-            }
+//        for (int i = 0; i < mideleSkver; i++) {
+//            for (int j = 0; j < mideleSkver; j++) {
+//                int tmp = oldArray[i][j];
+//                oldArray[i][j] = oldArray[i + mideleSkver - 1][j + mideleSkver - 1];
+//
+//            }
+//
+//
+//
+//
+//        }
 
 
-        }
-
-        return oldArray;
+        return newArray;
     }
 
     private static boolean checker(int[][] oldArray, int columnLength) {
+        int rowLengt;
         for (int i = 0; i < columnLength; i++) {
-            for (int j = 0; j < oldArray[j].length; j++) {
-                if (columnLength != oldArray[j].length || oldArray == null) {
+            rowLengt = oldArray[i].length;
+
+            for (int j = 0; j < rowLengt; j++) {
+                if (columnLength != rowLengt || oldArray == null) {
                 }
                 return true;
             }

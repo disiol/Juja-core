@@ -1,6 +1,4 @@
-package ua.com.juja.core.Matrix.LAB22.rateMatrix.Test;
-
-import ua.com.juja.core.Matrix.LAB22.rateMatrix.RateMatrix;
+package ua.com.juja.core.Matrix.LAB22.rateMatrix;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNull;
