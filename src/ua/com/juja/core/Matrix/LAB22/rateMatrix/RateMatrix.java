@@ -16,61 +16,40 @@ public class RateMatrix {
     public static int[][] rotateClockwise(int[][] oldArray) {
         int columnLength = oldArray.length;
         int mideleSkver = oldArray.length / 2;
-        int newArray[][] = new int[columnLength][];
+        int newArray[][] = new int[columnLength][columnLength];
 
-
-        // 1) проверяет, что метод получил "квадратную" матрицу (допустимые размеры 1x1, 2x2, 3x3, ...) иначе возвращать null;
-        // (возможные ошибки: null вместо массива, одна из размерностей = 0, длина не равна ширине, есть строки разной длины,
-        // есть строки с null вместо одномерных массивов)
+//
+//        // 1) проверяет, что метод получил "квадратную" матрицу (допустимые размеры 1x1, 2x2, 3x3, ...) иначе возвращать null;
+//        // (возможные ошибки: null вместо массива, одна из размерностей = 0, длина не равна ширине, есть строки разной длины,
+//        // есть строки с null вместо одномерных массивов)
         if (checker(oldArray, columnLength)) {
             return null;
         } else {
+            rateMatrix(oldArray, columnLength, newArray);
 
-            for (int i = 0; i < columnLength - 1; i++) {
-                for (int j = 0; j < oldArray[i].length - 1; j++)
-                    newArray[i][j] = oldArray[columnLength - j][i];
-            }
-            for (int i = 0; i < columnLength; i++) {
-                for (int j = 0; j < columnLength; j++) {
-                    System.out.printf("%3d ", newArray[i][j]);
-                }
-                System.out.print("\n");
-            }
-
+            printMaprix(columnLength, newArray);
 
         }
 
-
-        //TODO
-        // 2) "проворачивает" массив по часовой стрелке на 90 градусов,
-        //  т.е[1] -> [1]
-        //
-        //      [[1, 2],
-        //       [3, 4]] -> [[3, 1],          первый елемент воромасива ставитса на место перврго елента первого масава
-        //                   [4, 2]]          первый елемент певог масиваа становиса на место втрого елемета первого масива
-        //                                втрой елемент первого масива становитса на место втрого лемента второго масива,
-        //                                    а втрой лемент на мето первого
-        //      [[1, 2, 3],
-        //       [4, 5, 6],
-        //       [7, 8, 9]] -> [[7, 4, 1],
-        //                      [8, 5, 2],
-        //                      [9, 6, 3]] ...
-
-
-//        for (int i = 0; i < mideleSkver; i++) {
-//            for (int j = 0; j < mideleSkver; j++) {
-//                int tmp = oldArray[i][j];
-//                oldArray[i][j] = oldArray[i + mideleSkver - 1][j + mideleSkver - 1];
-//
-//            }
-//
-//
-//
-//
-//        }
-
-
         return newArray;
+    }
+
+    private static void printMaprix(int columnLength, int[][] newArray) {
+        for (int b = 0; b < columnLength; b++) {
+            for (int c = 0; c < newArray[b].length; c++) {
+                System.out.printf("%3d ", newArray[b][c]);
+            }
+            System.out.print("\n");
+        }
+    }
+
+    private static void rateMatrix(int[][] oldArray, int columnLength, int[][] newArray) {
+        int i, j;
+        for (i = 0; i < columnLength; i++) {
+            for (j = 0; j < columnLength; j++) {
+                newArray[i][j] = oldArray[columnLength - j - 1][i];
+            }
+        }
     }
 
     private static boolean checker(int[][] oldArray, int columnLength) {
@@ -80,8 +59,9 @@ public class RateMatrix {
 
             for (int j = 0; j < rowLengt; j++) {
                 if (columnLength != rowLengt || oldArray == null) {
+                    return true;
                 }
-                return true;
+                return false;
             }
 
         }
