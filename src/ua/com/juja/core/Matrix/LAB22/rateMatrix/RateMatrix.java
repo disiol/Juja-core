@@ -5,33 +5,46 @@ package ua.com.juja.core.Matrix.LAB22.rateMatrix;
  * mail: deoniisii@gmail.com
  */
 public class RateMatrix {
+
+
     public static void main(String[] args) {
-        int[][] oldArray = {new int[]{1, 2, 3}, new int[]{4, 5, 6}, new int[]{7, 8, 9}};
-
-        rotateClockwise(oldArray);
-
+        Object res;
+        System.out.println(res = RateMatrix.rotateClockwise(null));
     }
 
 
     public static int[][] rotateClockwise(int[][] oldArray) {
-        int columnLength = oldArray.length;
-        int mideleSkver = oldArray.length / 2;
-        int newArray[][] = new int[columnLength][columnLength];
 
-//
-//        // 1) проверяет, что метод получил "квадратную" матрицу (допустимые размеры 1x1, 2x2, 3x3, ...) иначе возвращать null;
-//        // (возможные ошибки: null вместо массива, одна из размерностей = 0, длина не равна ширине, есть строки разной длины,
-//        // есть строки с null вместо одномерных массивов)
-        if (checker(oldArray, columnLength)) {
+        if (checker(oldArray)) {
             return null;
-        } else {
-            rateMatrix(oldArray, columnLength, newArray);
-
-            printMaprix(columnLength, newArray);
-
         }
 
+        int columnLength = oldArray.length;
+        int roowLeght = oldArray[0].length;
+        int newArray[][] = new int[columnLength][columnLength];
+
+
+
+        rateMatrix(oldArray, columnLength, newArray);
+
+        printMaprix(columnLength, newArray);
+
+
         return newArray;
+    }
+
+    private static boolean checker(int[][] oldArray) {
+        if (oldArray == null || oldArray.length == 0 || oldArray[0] == null || oldArray[0].length != oldArray.length) {
+            return true;
+        }
+
+
+        for (int i = 0; i < oldArray.length; i++) {
+            if (oldArray[i] == null || oldArray[i].length != oldArray[0].length) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static void printMaprix(int columnLength, int[][] newArray) {
@@ -52,19 +65,4 @@ public class RateMatrix {
         }
     }
 
-    private static boolean checker(int[][] oldArray, int columnLength) {
-        int rowLengt;
-        for (int i = 0; i < columnLength; i++) {
-            rowLengt = oldArray[i].length;
-
-            for (int j = 0; j < rowLengt; j++) {
-                if (columnLength != rowLengt || oldArray == null) {
-                    return true;
-                }
-                return false;
-            }
-
-        }
-        return false;
-    }
 }
