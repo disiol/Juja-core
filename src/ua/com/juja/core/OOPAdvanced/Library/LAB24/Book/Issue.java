@@ -1,4 +1,4 @@
-package ua.com.juja.core.Library.LAB24;
+package ua.com.juja.core.OOPAdvanced.Library.LAB24.Book;
 
 public class Issue {
     private String name;
