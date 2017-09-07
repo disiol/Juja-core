@@ -1,4 +1,4 @@
-package ua.com.juja.core.OOPAdvanced.LAB24;
+package ua.com.juja.core.Library.LAB24;
 
 /**
  * Created by Denis Oleynyk on 07.09.17.
