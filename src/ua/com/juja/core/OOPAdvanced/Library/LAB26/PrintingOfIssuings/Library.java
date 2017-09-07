@@ -20,7 +20,7 @@ class Issue {
         return countPages;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
@@ -69,7 +69,18 @@ class Book extends Issue {
 public class Library {
 
     public String printCatalog(Issue[] catalog) {
-              /*BODY*/
-        return null;
+        String info = "";
+
+
+        if (catalog.length == 0) {
+            return "";
+        } else {
+            for (int i = 0; i < catalog.length; i++) {
+                info += catalog[i].toPrint();
+                System.out.println(info);
+
+            }
+        }
+        return info;
     }
 } 
