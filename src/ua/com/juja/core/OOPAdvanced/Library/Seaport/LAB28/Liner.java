@@ -120,26 +120,27 @@ class OdessaSeaPort implements SeaPortQueue {
     public int addShipToEndQueue(AbstractShip ship) {
         for (int index = 0; index < arrayShip.length; index++) {
 
+            // Если корабль успешно добавлен в очередь,в озврощает его  индес массиве очереди.
             if (arrayShip[index] == null) {
                 arrayShip[index] = ship;
                 indexShipInPort = index;
                 return indexShipInPort;
             }
-
+           //Если очередь полная возвращает -1
             if (index == LENGTH_QUEUE_SHIP - 1 && arrayShip[index] != null) {
                 indexShipInPort = -1;
                 return indexShipInPort;
             }
 
         }
-//  TODO - метод, который добавляет корабль в конец очереди. Если очередь полная необходимо вернуть -1.
-// Если корабль успешно добавлен в очередь, необходимо вернуть его индекс в массиве очереди.
+
 
         return indexShipInPort;
     }
 
     @Override
     public int removeShipFromBeginQueue() {
+        //очередь пуста возрощает -1
         if (indexShipInPort == NO_SHIP_IN_ARRAY) {
             return NO_SHIP_IN_ARRAY;
         } else {
@@ -152,9 +153,11 @@ class OdessaSeaPort implements SeaPortQueue {
 
     @Override
     public String printQueueShip() {
+        //Если в очереди нет кораблей возрощает строку "QueueEmpty"
         if (indexShipInPort == NO_SHIP_IN_ARRAY) {
             return "QueueEmpty";
         } else {
+            //печать информации о корабле
             //TODO  Выходная строка имеет следующий вид: {Name=<>Length=<>Width=<>Displacement=<>};{Name=<>Length=<>Width=<>Displacement=<>};
         }
         return null;
