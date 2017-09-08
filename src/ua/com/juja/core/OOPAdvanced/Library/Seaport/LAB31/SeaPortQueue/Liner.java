@@ -147,6 +147,12 @@ class OdessaSeaPort implements SeaPortQueue {
             /* TODO Если корабль успешно удален вернуть 1. При удалении корабля обеспечить продвижение кораблей в начало очереди.
             (Подсказка: очередь - массив, поэтому можно использовать методы из стандартных пакетов для работы с массивами)
             */
+            //удаляет корабль из начала очереди
+            System.out.println("удаляет корабль из начала очереди ");
+           arrayShip = removeShip(arrayShip, 0);
+            for (int i = 0; i < arrayShip.length; i++) {
+                System.out.println(arrayShip[i].toPrint());
+            }
             return 1;
         }
     }
@@ -160,6 +166,7 @@ class OdessaSeaPort implements SeaPortQueue {
             return "QueueEmpty";
         } else {
             //печать информации о корабле
+            System.out.println(" печать информации о корабле ");
             for (int i = 0; i < arrayShip.length; i++) {
                 Ships += "{" + arrayShip[i].toPrint() + "};";
                 System.out.println(Ships);
@@ -169,6 +176,20 @@ class OdessaSeaPort implements SeaPortQueue {
 
 
         return Ships;
+    }
+
+
+    public AbstractShip[] removeShip(AbstractShip[] symbols, int index) {
+        if (index >= 0 && index < symbols.length) {
+            AbstractShip[] copy = new AbstractShip[symbols.length - 1];
+            System.arraycopy(symbols, 0, copy, 0, index);
+            System.arraycopy(symbols, index + 1, copy, index, symbols.length - index - 1);
+            return copy;
+        }
+        for (int i = 0; i < symbols.length; i++) {
+            System.out.println(symbols[i]);
+        }
+        return symbols;
     }
 
 
