@@ -1,0 +1,75 @@
+package ua.com.juja.core.OOPAdvanced.Library.Seaport.LAB28;
+
+import static org.testng.AssertJUnit.assertEquals;
+
+public class Test {
+
+
+    @org.testng.annotations.Test
+    public static void Test4() {
+
+    }
+@org.testng.annotations.Test
+    public static void Test3() {
+        //check add into full queue
+        System.out.println("check add into full queue");
+        String testLinerName = "TestLinerName";
+        float testLinerLength = 1000;
+        float testLinerWidth = 1000;
+        float testLinerDisplacement = 1000;
+        int testLinerPassengers = 100;
+        String testCargoName = "TestCargoName";
+        float testCargoLength = 1000;
+        float testCargoWidth = 1000;
+        float testCargoDisplacement = 1000;
+        float testCargoTonnage = 100;
+        String testTankerName = "TestTankerName";
+        float testTankerLength = 1000;
+        float testTankerWidth = 1000;
+        float testTankerDisplacement = 1000;
+        float testTankerVolume = 100;
+
+        int expected = -1;
+
+        AbstractShip testLiner = new Liner(testLinerName, testLinerLength, testLinerWidth, testLinerDisplacement, testLinerPassengers);
+        AbstractShip testCargo = new Cargo(testCargoName, testCargoLength, testCargoWidth, testCargoDisplacement, testCargoTonnage);
+        AbstractShip testTanker = new Tanker(testTankerName, testTankerLength, testTankerWidth, testTankerDisplacement, testTankerVolume);
+
+        OdessaSeaPort odessaSeaPort = new OdessaSeaPort();
+
+
+        odessaSeaPort.addShipToEndQueue(testLiner);
+        odessaSeaPort.addShipToEndQueue(testCargo);
+        odessaSeaPort.addShipToEndQueue(testTanker);
+
+        int actual = odessaSeaPort.addShipToEndQueue(testTanker);
+
+        assertEquals("Queue is full expected return -1 but found ", expected, actual);
+    }
+
+
+    @org.testng.annotations.Test
+    public static void Test2() {
+        //check delete in empty  queue
+        System.out.println("check delete in empty  queue " + "\n");
+        int expected = -1;
+        OdessaSeaPort odessaSeaPort = new OdessaSeaPort();
+
+        int actual = odessaSeaPort.removeShipFromBeginQueue();
+
+
+        assertEquals("Queue is empty expected return -1 but found ", expected, actual);
+
+    }
+
+    @org.testng.annotations.Test
+    public static void Test1() {
+        //check print empty queue
+        System.out.println(" check print empty queue " + "\n");
+        String expected = "QueueEmpty";
+
+        OdessaSeaPort odessaSeaPort = new OdessaSeaPort();
+        String actual = odessaSeaPort.printQueueShip();
+        assertEquals("Print empty queue expected to be printed", expected, actual);
+    }
+}
