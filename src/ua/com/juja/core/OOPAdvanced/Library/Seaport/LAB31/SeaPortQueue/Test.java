@@ -1,4 +1,4 @@
-package ua.com.juja.core.OOPAdvanced.Library.Seaport.LAB28;
+package ua.com.juja.core.OOPAdvanced.Library.Seaport.LAB31.SeaPortQueue;
 
 import static org.testng.AssertJUnit.assertEquals;
 
@@ -47,7 +47,7 @@ public class Test {
 
         String actualPrintShipQueueAfterRemove = odessaSeaPort.printQueueShip();
 
-        assertEquals("Expected to be printed ", actualPrintShipQueueAfterRemove, expectedResultPrintShipQueueAfterRemove);
+        assertEquals("Expected to be printed ", expectedResultPrintShipQueueAfterRemove, actualPrintShipQueueAfterRemove);
 
 
     }

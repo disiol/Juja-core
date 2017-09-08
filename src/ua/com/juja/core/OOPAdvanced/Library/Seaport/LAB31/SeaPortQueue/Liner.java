@@ -1,4 +1,4 @@
-package ua.com.juja.core.OOPAdvanced.Library.Seaport.LAB28;
+package ua.com.juja.core.OOPAdvanced.Library.Seaport.LAB31.SeaPortQueue;
 
 /**
  * Created by Denis Oleynyk on 07.09.17.
@@ -126,7 +126,7 @@ class OdessaSeaPort implements SeaPortQueue {
                 indexShipInPort = index;
                 return indexShipInPort;
             }
-           //Если очередь полная возвращает -1
+            //Если очередь полная возвращает -1
             if (index == LENGTH_QUEUE_SHIP - 1 && arrayShip[index] != null) {
                 indexShipInPort = -1;
                 return indexShipInPort;
@@ -153,18 +153,23 @@ class OdessaSeaPort implements SeaPortQueue {
 
     @Override
     public String printQueueShip() {
+        String Ships = "";
+
         //Если в очереди нет кораблей возрощает строку "QueueEmpty"
         if (indexShipInPort == NO_SHIP_IN_ARRAY) {
             return "QueueEmpty";
         } else {
             //печать информации о корабле
-            //TODO  Выходная строка имеет следующий вид: {Name=<>Length=<>Width=<>Displacement=<>};{Name=<>Length=<>Width=<>Displacement=<>};
+            for (int i = 0; i < arrayShip.length; i++) {
+                Ships += "{" + arrayShip[i].toPrint() + "};";
+                System.out.println(Ships);
+
+            }
         }
-        return null;
+
+
+        return Ships;
     }
 
-    public static void main(String[] args) {
-
-    }
 
 }
