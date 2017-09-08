@@ -144,15 +144,9 @@ class OdessaSeaPort implements SeaPortQueue {
         if (indexShipInPort == NO_SHIP_IN_ARRAY) {
             return NO_SHIP_IN_ARRAY;
         } else {
-            /* TODO Если корабль успешно удален вернуть 1. При удалении корабля обеспечить продвижение кораблей в начало очереди.
-            (Подсказка: очередь - массив, поэтому можно использовать методы из стандартных пакетов для работы с массивами)
-            */
             //удаляет корабль из начала очереди
             System.out.println("удаляет корабль из начала очереди ");
            arrayShip = removeShip(arrayShip, 0);
-            for (int i = 0; i < arrayShip.length; i++) {
-                System.out.println(arrayShip[i].toPrint());
-            }
             return 1;
         }
     }
