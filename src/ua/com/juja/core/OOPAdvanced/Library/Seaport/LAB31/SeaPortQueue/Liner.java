@@ -163,9 +163,9 @@ class OdessaSeaPort implements SeaPortQueue {
             System.out.println(" печать информации о корабле ");
             for (int i = 0; i < arrayShip.length; i++) {
                 Ships += "{" + arrayShip[i].toPrint() + "};";
-                System.out.println(Ships);
-
             }
+
+            System.out.println(Ships);
         }
 
 
