@@ -24,8 +24,7 @@ public class Test {
         float testTankerDisplacement = 1000;
         float testTankerVolume = 100;
 
-        String expectedResultPrintShipQueueAfterRemove = "{Name=NameTestLinerLength=1000.0Width=1000.0Displacement=1000.0};" +
-                                                         "{Name=NameTestTankerLength=1000.0Width=1000.0Displacement=1000.0};";
+        String expectedResultPrintShipQueueAfterRemove = "{Name=NameTestLinerLength=1000.0Width=1000.0Displacement=1000.0};{Name=NameTestTankerLength=1000.0Width=1000.0Displacement=1000.0};";
 
         int expectedSuccessfulStatusRemoveShipInQueue = 1;
 
@@ -48,7 +47,7 @@ public class Test {
 
         String actualPrintShipQueueAfterRemove = odessaSeaPort.printQueueShip();
 
-        assertEquals("Expected to be printed ", expectedResultPrintShipQueueAfterRemove, actualPrintShipQueueAfterRemove);
+        assertEquals("Expected to be printed ", expectedResultPrintShipQueueAfterRemove,actualPrintShipQueueAfterRemove);
 
 
     }
