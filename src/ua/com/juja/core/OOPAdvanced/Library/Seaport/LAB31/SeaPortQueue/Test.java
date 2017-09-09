@@ -1,8 +1,7 @@
 package ua.com.juja.core.OOPAdvanced.Library.Seaport.LAB31.SeaPortQueue;
 
-public class Test{
+public class Test {
     public static void main(String[] args) {
- //check successful remove ship
         String testLinerName = "NameTestLiner";
         float testLinerLength = 1000;
         float testLinerWidth = 1000;
@@ -19,9 +18,7 @@ public class Test{
         float testTankerDisplacement = 1000;
         float testTankerVolume = 100;
 
-        String expectedResultPrintShipQueueAfterRemove = "{Name=NameTestLinerLength=1000.0Width=1000.0Displacement=1000.0};{Name=NameTestTankerLength=1000.0Width=1000.0Displacement=1000.0};";
-
-        int expectedSuccessfulStatusRemoveShipInQueue = 1;
+        String expectedResultPrintShipQueue = "{Name=NameTestLinerLength=1000.0Width=1000.0Displacement=1000.0};{Name=NameTestCargoLength=1000.0Width=1000.0Displacement=1000.0};";
 
         AbstractShip testLiner = new Liner(testLinerName, testLinerLength, testLinerWidth, testLinerDisplacement, testLinerPassengers);
         AbstractShip testCargo = new Cargo(testCargoName, testCargoLength, testCargoWidth, testCargoDisplacement, testCargoTonnage);
@@ -29,20 +26,14 @@ public class Test{
 
         OdessaSeaPort odessaSeaPort = new OdessaSeaPort();
 
-
-        odessaSeaPort.addShipToEndQueue(testCargo);
         odessaSeaPort.addShipToEndQueue(testLiner);
-        odessaSeaPort.addShipToEndQueue(testTanker);
+        odessaSeaPort.addShipToEndQueue(testCargo);
 
-       
-        int actualSuccessfulStatusRemoveShipInQueue = odessaSeaPort.removeShipFromBeginQueue();
-        if (actualSuccessfulStatusRemoveShipInQueue != expectedSuccessfulStatusRemoveShipInQueue)
-            throw new AssertionError("Successful status remove ship in queue 1 but found " + actualSuccessfulStatusRemoveShipInQueue);
 
-        String actualPrintShipQueueAfterRemove = odessaSeaPort.printQueueShip();
-        if(!(actualPrintShipQueueAfterRemove.equals(expectedResultPrintShipQueueAfterRemove)))
-            throw new AssertionError("Expected to be printed " + expectedResultPrintShipQueueAfterRemove + " but found " + actualPrintShipQueueAfterRemove);
-
+        //check print queue ship
+        String actualPrintQueueShip = odessaSeaPort.printQueueShip();
+        if(!(actualPrintQueueShip.equals(expectedResultPrintShipQueue)))
+            throw new AssertionError("Expected to be printed " + expectedResultPrintShipQueue + " but found " + actualPrintQueueShip);
 
         System.out.print("OK");
     }

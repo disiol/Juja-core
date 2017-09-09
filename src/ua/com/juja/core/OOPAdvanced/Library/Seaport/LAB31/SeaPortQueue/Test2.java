@@ -1,13 +1,53 @@
 package ua.com.juja.core.OOPAdvanced.Library.Seaport.LAB31.SeaPortQueue;
 
+import org.testng.annotations.Test;
+
 import static org.testng.AssertJUnit.assertEquals;
 
 public class Test2 {
 
 
+    @Test
+    public static void Test5() {
+        String testLinerName = "NameTestLiner";
+        float testLinerLength = 1000;
+        float testLinerWidth = 1000;
+        float testLinerDisplacement = 1000;
+        int testLinerPassengers = 100;
+        String testCargoName = "NameTestCargo";
+        float testCargoLength = 1000;
+        float testCargoWidth = 1000;
+        float testCargoDisplacement = 1000;
+        float testCargoTonnage = 100;
+        String testTankerName = "NameTestTanker";
+        float testTankerLength = 1000;
+        float testTankerWidth = 1000;
+        float testTankerDisplacement = 1000;
+        float testTankerVolume = 100;
+
+        String expectedResultPrintShipQueue = "{Name=NameTestLinerLength=1000.0Width=1000.0Displacement=1000.0};{Name=NameTestCargoLength=1000.0Width=1000.0Displacement=1000.0};";
+
+        AbstractShip testLiner = new Liner(testLinerName, testLinerLength, testLinerWidth, testLinerDisplacement, testLinerPassengers);
+        AbstractShip testCargo = new Cargo(testCargoName, testCargoLength, testCargoWidth, testCargoDisplacement, testCargoTonnage);
+        AbstractShip testTanker = new Tanker(testTankerName, testTankerLength, testTankerWidth, testTankerDisplacement, testTankerVolume);
+
+        OdessaSeaPort odessaSeaPort = new OdessaSeaPort();
+
+        odessaSeaPort.addShipToEndQueue(testLiner);
+        odessaSeaPort.addShipToEndQueue(testCargo);
+
+
+        //check print queue ship
+        String actualPrintQueueShip = odessaSeaPort.printQueueShip();
+
+            assertEquals("Expected to be printed " ,expectedResultPrintShipQueue,actualPrintQueueShip);
+
+
+    }
+
     @org.testng.annotations.Test
     public static void Test4() {
-
+        //check successful remove ship
         String testLinerName = "NameTestLiner";
         float testLinerLength = 1000;
         float testLinerWidth = 1000;
@@ -47,7 +87,7 @@ public class Test2 {
 
         String actualPrintShipQueueAfterRemove = odessaSeaPort.printQueueShip();
 
-        assertEquals("Expected to be printed ", expectedResultPrintShipQueueAfterRemove,actualPrintShipQueueAfterRemove);
+        assertEquals("Expected to be printed ", expectedResultPrintShipQueueAfterRemove, actualPrintShipQueueAfterRemove);
 
 
     }

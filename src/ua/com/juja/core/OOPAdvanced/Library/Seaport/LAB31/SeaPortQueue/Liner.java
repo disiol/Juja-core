@@ -145,31 +145,32 @@ class OdessaSeaPort implements SeaPortQueue {
             return NO_SHIP_IN_ARRAY;
         } else {
             //удаляет корабль из начала очереди
-            System.out.println("удаляет корабль из начала очереди ");
-           arrayShip = removeShip(arrayShip, 0);
+            arrayShip = removeShip(arrayShip, 0);
             return 1;
         }
     }
 
     @Override
     public String printQueueShip() {
-        String Ships = "";
+
 
         //Если в очереди нет кораблей возрощает строку "QueueEmpty"
         if (indexShipInPort == NO_SHIP_IN_ARRAY) {
             return "QueueEmpty";
         } else {
+            String Ships = "";
             //печать информации о корабле
-            System.out.println(" печать информации о корабле ");
             for (int i = 0; i < arrayShip.length; i++) {
-                Ships += "{" + arrayShip[i].toPrint() + "};";
+                if(arrayShip[i] != null) {
+                    Ships += "{" + arrayShip[i].toPrint() + "};";
+                }
             }
 
-            System.out.println(Ships);
+            return Ships;
         }
 
 
-        return Ships;
+
     }
 
 
@@ -185,6 +186,9 @@ class OdessaSeaPort implements SeaPortQueue {
         }
         return symbols;
     }
+
+
+
 
 
 }
