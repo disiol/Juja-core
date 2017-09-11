@@ -6,7 +6,7 @@ package ua.com.juja.core.OOPAdvanced.Seaport.LAB30.Cargo;
  */
 public class Cargo extends AbstractShip {
     private float tonnage;
-    public static final float DEFAULT_RENTAL=550;
+    public static final float DEFAULT_RENTAL = 550;
     private float rental;
 
     public Cargo(String name, float length, float width, float displacement, float сargoTonnage) {
@@ -20,7 +20,15 @@ public class Cargo extends AbstractShip {
         return rental;
     }
 
-     /*BODY*/
+    public float calculatePayment(float rentTaxNegative) {
+        if (rentTaxNegative <= 0) {
+            rental = tonnage * DEFAULT_RENTAL;
+        }else {
+            rental = rentTaxNegative * tonnage;
+        }
+        return rental;
+    }
+
 
 }
 
