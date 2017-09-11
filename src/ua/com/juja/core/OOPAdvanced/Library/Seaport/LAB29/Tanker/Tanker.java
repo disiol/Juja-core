@@ -19,7 +19,15 @@ public class Tanker extends AbstractShip {
         return reantal;
     }
 
-     /*BODY*/
+    public float calculatePayment(float rentTax) {
+        if (rentTax <= 0){
+            rentTax = DEFAULT_RENTAL;
+        }
+            float reantal = rentTax * volume;
+        return reantal;
+    }
+
+
 
 }
 
