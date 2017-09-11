@@ -16,18 +16,22 @@ public class Liner extends AbstractShip {
 
     @Override
     public float calculatePayment() {
-        //TODO  Количество пассажиров * Рентный налог судна.  Типы данных параметра float. Формула для расчета не меняется.
-        // Если передается отрицательное значение рентной ставки или 0 то использовать дефолтное значение для этого типа корабля.
-        return DEFAULT_RENTAL * passengers;
+        float rental = DEFAULT_RENTAL * passengers;
+        return rental;
     }
 
     public float calculatePayment(float rentTaxNegative) {
         //TODO  Количество пассажиров * Рентный налог судна.  Типы данных параметра float. Формула для расчета не меняется.
         // Если передается отрицательное значение рентной ставки или 0 то использовать дефолтное значение для этого типа корабля.
-        return rentTaxNegative * passengers;
+        if (rentTaxNegative <=0) {
+            rentTaxNegative = DEFAULT_RENTAL;
+        }
+
+        float rental = rentTaxNegative * passengers;
+        return rental;
     }
 
-     /*BODY*/
+
 
 }
 
