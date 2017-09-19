@@ -6,7 +6,7 @@ import java.util.Arrays;
 import static junit.framework.Assert.assertEquals;
 
 public class Test {
-    @org.junit.jupiter.api.Test
+    @org.junit.Test
     public void Test2() {
         BigInteger[] x = {new BigInteger("1"), new BigInteger("2")};
         BigInteger[] y = {new BigInteger("1"), new BigInteger("2")};

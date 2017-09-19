@@ -1,7 +1,6 @@
 package ua.com.juja.core.OOPAdvanced.Seaport.LAB32.SortingOfTheShips;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.AssertJUnit.assertNotNull;
 
 public class Test {
     @org.testng.annotations.Test
@@ -38,14 +37,13 @@ public class Test {
 
     }
 
-    @org.testng.annotations.Test
-    public static void test1() {
+    public static void main(String[] args) {
 
         // check null
         String actualSortedShipStringIfNull = OdessaSeaPort.sortSumPaymentAsc(null);
-        if (!((actualSortedShipStringIfNull != null) && (actualSortedShipStringIfNull.isEmpty())))
-            assertNotNull("Result cannot be null, expected to be empty string", actualSortedShipStringIfNull);
+        if (!((actualSortedShipStringIfNull!=null) && (actualSortedShipStringIfNull.isEmpty())))
+            throw new AssertionError("Result cannot be null, expected to be empty string");
 
-
+        System.out.print("OK");
     }
 }
