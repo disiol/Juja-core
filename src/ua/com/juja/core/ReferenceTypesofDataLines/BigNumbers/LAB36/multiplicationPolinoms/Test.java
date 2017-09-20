@@ -2,7 +2,6 @@ package ua.com.juja.core.ReferenceTypesofDataLines.BigNumbers.LAB36.multiplicati
 
 import java.math.BigInteger;
 import java.util.Arrays;
-
 import static org.junit.Assert.assertEquals;
 
 public class Test {
@@ -26,6 +25,6 @@ public class Test {
 
         assertEquals(Arrays.toString(expected),Arrays.toString(actual));
 
-        System.out.print("OK");
+
     }
 }
