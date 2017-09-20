@@ -11,7 +11,7 @@ public class Test {
         String expected = "0";
         String actual = BigIntegerUtils.toBitStr(k);
 
-        assertEquals("BigIntegerUtils.toBitStr(k)", expected, actual);
+        assertEquals("BigIntegerUtils.toBitStr(\"0\")", expected, actual);
 
     }
 }
