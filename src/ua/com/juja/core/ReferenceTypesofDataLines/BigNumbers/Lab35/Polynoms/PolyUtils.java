@@ -1,4 +1,4 @@
-package ua.com.juja.core.ReferenceTypesofDataLines.BigNumbers.Lab35.PolyUtils;
+package ua.com.juja.core.ReferenceTypesofDataLines.BigNumbers.Lab35.Polynoms;
 
 /**
  * Created by Denis Oleynyk on 20.09.17.

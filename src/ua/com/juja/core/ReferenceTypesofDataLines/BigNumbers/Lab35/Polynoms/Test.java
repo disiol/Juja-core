@@ -1,4 +1,4 @@
-package ua.com.juja.core.ReferenceTypesofDataLines.BigNumbers.Lab35.PolyUtils;
+package ua.com.juja.core.ReferenceTypesofDataLines.BigNumbers.Lab35.Polynoms;
 
 import java.math.BigInteger;
 
