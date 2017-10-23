@@ -26,6 +26,7 @@ public class AccountManager {
             } catch (TryAgainException ex) {
                 indexCacheBack += 1;
             } catch (Exception ex) {
+                //do nothing
 
             }
         }
