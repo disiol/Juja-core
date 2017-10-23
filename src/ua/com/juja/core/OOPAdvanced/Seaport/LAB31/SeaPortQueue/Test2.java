@@ -1,8 +1,9 @@
 package ua.com.juja.core.OOPAdvanced.Seaport.LAB31.SeaPortQueue;
 
-import org.testng.annotations.Test;
 
-import static org.testng.AssertJUnit.assertEquals;
+import org.junit.Test;
+
+import static junit.framework.TestCase.assertEquals;
 
 public class Test2 {
 
@@ -45,7 +46,7 @@ public class Test2 {
 
     }
 
-    @org.testng.annotations.Test
+    @Test
     public static void Test4() {
         //check successful remove ship
         String testLinerName = "NameTestLiner";
@@ -93,7 +94,7 @@ public class Test2 {
     }
 
 
-    @org.testng.annotations.Test
+    @Test
     public static void Test3() {
         //check add into full queue
         System.out.println("check add into full queue");
@@ -132,7 +133,7 @@ public class Test2 {
     }
 
 
-    @org.testng.annotations.Test
+    @Test
     public static void Test2() {
         //check delete in empty  queue
         System.out.println("check delete in empty  queue " + "\n");
@@ -146,7 +147,7 @@ public class Test2 {
 
     }
 
-    @org.testng.annotations.Test
+    @Test
     public static void Test1() {
         //check print empty queue
         System.out.println(" check print empty queue " + "\n");

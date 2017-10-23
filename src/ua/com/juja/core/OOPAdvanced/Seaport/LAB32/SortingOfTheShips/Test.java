@@ -1,9 +1,9 @@
 package ua.com.juja.core.OOPAdvanced.Seaport.LAB32.SortingOfTheShips;
 
-import static org.testng.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Test {
-    @org.testng.annotations.Test
+    @org.junit.Test
     public static void test2() {
 
         String testLinerName = "TestLinerName";

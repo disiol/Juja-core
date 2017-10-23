@@ -1,9 +1,10 @@
 package ua.com.juja.core.OOPAdvanced.Seaport.LAB30.Cargo;
 
-import static org.testng.Assert.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Test {
-    @org.testng.annotations.Test
+    @org.junit.Test
 
     public static void test2() {
         String testCargoName = "TestCargoName";
@@ -27,7 +28,7 @@ public class Test {
 
     }
 
-    @org.testng.annotations.Test
+    @org.junit.Test
     public static void test1() {
         String testCargoName = "TestCargoName";
         float testCargoLength = 1000;

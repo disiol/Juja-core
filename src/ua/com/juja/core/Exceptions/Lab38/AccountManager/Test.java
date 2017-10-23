@@ -49,6 +49,9 @@ public class Test {
         testAccounts[1] = account2;
         testAccounts[2] = account3;
 
+
+        actualResultTransfer = AccountManager.transfer(testAccounts, testDelta);
+
     }
 
     //check
@@ -64,7 +67,7 @@ public class Test {
     @org.junit.Test
 
     public void checkForEquals_2() {
-        int expected = testDelta[1] + amountAcc1;
+        int expected = testDelta[1] + amountAcc2;
         int actual = testAccounts[1].getAmount();
         assertEquals("Account should be equals " + expected, expected, actual);
     }
@@ -72,7 +75,7 @@ public class Test {
     @org.junit.Test
 
     public void checkForEquals_3() {
-        int expected = testDelta[2] + amountAcc1;
+        int expected = testDelta[2] + amountAcc3;
         int actual = testAccounts[2].getAmount();
         assertEquals("Account should be equals " + expected, expected, actual);
     }

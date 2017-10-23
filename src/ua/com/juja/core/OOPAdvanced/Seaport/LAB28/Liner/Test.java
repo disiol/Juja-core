@@ -1,10 +1,11 @@
 package ua.com.juja.core.OOPAdvanced.Seaport.LAB28.Liner;
 
-import static org.testng.Assert.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Test {
 
-    @org.testng.annotations.Test
+    @org.junit.Test
     public static void test2() {
         String testLinerName = "TestLinerName";
         float testLinerLength = 1000;
@@ -27,7 +28,7 @@ public class Test {
 
     }
 
-    @org.testng.annotations.Test
+    @org.junit.Test
     public static void test1() {
         String testLinerName = "TestLinerName";
         float testLinerLength = 1000;

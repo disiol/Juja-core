@@ -4,6 +4,7 @@ import java.math.BigInteger;
 
 import static org.junit.Assert.assertEquals;
 
+
 public class Test {
     @org.junit.Test
     public void Test1() {
@@ -11,12 +12,7 @@ public class Test {
         BigInteger arg = new BigInteger("1");
         BigInteger expected = new BigInteger("10");
         BigInteger actual = PolyUtils.eval(poly, arg);
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
 
-        if (!expected.equals(actual)) {
-            throw new AssertionError();
-        }
-
-        System.out.print("OK");
     }
 }

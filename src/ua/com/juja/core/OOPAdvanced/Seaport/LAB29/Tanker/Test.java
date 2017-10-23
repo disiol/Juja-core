@@ -1,9 +1,10 @@
 package ua.com.juja.core.OOPAdvanced.Seaport.LAB29.Tanker;
 
-import static org.testng.AssertJUnit.assertEquals;
+
+import static junit.framework.TestCase.assertEquals;
 
 public class Test {
-    @org.testng.annotations.Test
+    @org.junit.Test
 
     public static void test2() {
         String testTankerName = "TestTankerName";
@@ -26,7 +27,7 @@ public class Test {
 
     }
 
-    @org.testng.annotations.Test
+    @org.junit.Test
     public static void test1() {
         String testTankerName = "TestTankerName";
         float testTankerLength = 1000;
