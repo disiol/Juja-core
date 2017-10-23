@@ -34,6 +34,7 @@ abstract class Account {
 
 
 class TryAgainException extends Exception {
+
 }
 
 class BlockAccountException extends Exception {
