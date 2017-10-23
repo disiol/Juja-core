@@ -2,15 +2,15 @@ package ua.com.juja.core.Exceptions.Lab38.AccountManager;
 
 public class AccountManager {
     public static boolean transfer(Account[] accounts, int[] delta) {
-        for (int k = 0; k < accounts.length; k++) {
+        for (int index = 0; index < accounts.length; index++) {
             try {
-                accounts[k].change(delta[k]);
+                accounts[index].change(delta[index]);
             } catch (TryAgainException e) {
                 e.printStackTrace();
-                k -= 1;
+                index -= 1;
             } catch (BlockAccountException e) {
                 e.printStackTrace();
-                cacheBack(accounts, delta, k);
+                cacheBack(accounts, delta, index);
                 return false;
             }
         }
@@ -19,12 +19,12 @@ public class AccountManager {
         return true;
     }
 
-    public static void cacheBack(Account[] accounts, int[] delta, int k) {
-        for (int j = k - 1; j > -1; j--) {
+    public static void cacheBack(Account[] accounts, int[] delta, int index) {
+        for (int indexCacheBack = index - 1; indexCacheBack > -1; indexCacheBack--) {
             try {
-                accounts[j].change(-delta[j]);
+                accounts[indexCacheBack].change(-delta[indexCacheBack]);
             } catch (TryAgainException ex) {
-                j += 1;
+                indexCacheBack += 1;
             } catch (Exception ex) {
 
             }
