@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class Test2 {
@@ -18,7 +19,7 @@ public class Test2 {
     public void call() {
         int[] testDelta = {100, 343, 245};
 
-         this.accountSum0 = 10;
+        this.accountSum0 = 10;
         this.accountSum1 = 25;
         this.accountSum2 = 64;
 
@@ -54,34 +55,34 @@ public class Test2 {
         //check
 
 
-
-
     }
 
     @Test
 
-    public  void checkEquals() {
+    public void checkEquals() {
         int expected = accountSum0;
         int actual = testAccounts[0].getAmount();
         assertEquals("Account should not be changed and should be equals " + expected, expected, actual);
     }
-@Test
 
-    public  void checkEquals_2() {
+    @Test
+
+    public void checkEquals_2() {
         int expected = accountSum1;
         int actual = testAccounts[1].getAmount();
         assertEquals("Account should not be changed and should be equals " + expected, expected, actual);
     }
-@Test
 
-    public  void checkEquals_3() {
+    @Test
+
+    public void checkEquals_3() {
         int expected = accountSum2;
         int actual = testAccounts[2].getAmount();
         assertEquals("Account should not be changed and should be equals " + expected, expected, actual);
     }
 
     @Test
-    public  void checkTrue() {
-        assertTrue("should to be result transfer is false but found true",actualResultTransfer);
+    public void checkTrue() {
+        assertFalse("should to be result transfer is false but found true", actualResultTransfer);
     }
 }
