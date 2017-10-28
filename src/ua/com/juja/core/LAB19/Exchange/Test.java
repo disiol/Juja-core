@@ -7,7 +7,7 @@ package ua.com.juja.core.LAB19.Exchange;
 
 public class Test {
     public static void main(String[] args) {
-        System.out.println("Test1");
+        System.out.println("Test_NotNull");
         Test1();
 
         System.out.println();

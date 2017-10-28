@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class Test {
     public static void main(String[] args) {
-        System.out.println("Test1");
+        System.out.println("Test_NotNull");
         Test1();
         System.out.println();
         System.out.println("Test2");

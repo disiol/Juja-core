@@ -74,6 +74,15 @@ public class SimpleArrayList <E> implements SimpleList<E> {
     public Iterator<E> iterator() {
 
         //TODO
+//
+//        boolean hasNext (); -метод возвращает true когда next () может вернуть элемент,
+//                иначе - false.
+//         E next();
+//        -метод возвращает следующий элемент, если элементов нету
+//        NoSuchElementException
+//        void remove (); -метод удаляет последний возвращенный элемент, если итератор еще не возвращал
+//        элемента еще нету - IllegalStateException
+
         return null;
     }
     /*BODY*/
