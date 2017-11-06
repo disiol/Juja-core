@@ -1,5 +1,7 @@
 package ua.com.juja.core.Collections.Lab40.SimpleArrayList;
 
+import com.sun.xml.internal.fastinfoset.stax.events.ReadIterator;
+
 import java.util.Iterator;
 import java.util.ConcurrentModificationException;
 import java.util.NoSuchElementException;
@@ -71,32 +73,44 @@ public class SimpleArrayList<E> implements SimpleList<E> {
 
     @Override
     public Iterator<E> iterator() {
-        next();
 
-        return null;
+        return new SimpleArrayListIterator();
     }
 
-    private void hasNext() {
 
+    private class SimpleArrayListIterator implements
+            Iterator<E> {
+        private int cursor;
 
-    }
-
-    E next() {
-        try {
-            int index = 0;
-            E dataIndex = data[index];
-            return dataIndex;
-        } catch (NullPointerException e) {
-            throw new NoSuchElementException();
+        public SimpleArrayListIterator() {
+            this.cursor = SimpleArrayList.this.size;
         }
 
+        public boolean hasNext() {
+            if (cursor <= size && cursor > 0) {
+                return true;
+            }
+            return false;
+        }
 
+        public E next() {
+            E current;
+            if (data[cursor] == null) {
+                throw new NoSuchElementException();
+            } else
+                current = data[cursor];
+            cursor++;
+            return current;
+
+        }
+
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
     }
 
 
 }
-
-
 
 
 interface SimpleList<E> {
