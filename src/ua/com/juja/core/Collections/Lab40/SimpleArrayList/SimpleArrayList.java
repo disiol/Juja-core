@@ -77,20 +77,16 @@ public class SimpleArrayList<E> implements SimpleList<E> {
     }
 
 
-
     private class SimpleArrayListIterator implements
             Iterator<E> {
         private int cursor;
 
         public SimpleArrayListIterator() {
-            this.cursor = SimpleArrayList.this.size;
+            this.cursor = 0;
         }
 
         public boolean hasNext() {
-            if (cursor <= size && cursor > 0) {
-                return true;
-            }
-            return false;
+            return cursor != size;
         }
 
         public E next() {
