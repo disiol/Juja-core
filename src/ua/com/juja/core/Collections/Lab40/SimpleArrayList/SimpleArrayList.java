@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.ConcurrentModificationException;
 import java.util.NoSuchElementException;
 
-public class SimpleArrayList <E> implements SimpleList<E> {
+public class SimpleArrayList<E> implements SimpleList<E> {
 
     private static final int DEFAULT_INITIAL_CAPACITY = 16;
     private E[] data;
@@ -31,7 +31,6 @@ public class SimpleArrayList <E> implements SimpleList<E> {
         rangeCheck(index);
         return data[index];
     }
-
 
 
     @Override
@@ -72,28 +71,44 @@ public class SimpleArrayList <E> implements SimpleList<E> {
 
     @Override
     public Iterator<E> iterator() {
-
-        //TODO
-//
-//        boolean hasNext (); -метод возвращает true когда next () может вернуть элемент,
-//                иначе - false.
-//         E next();
-//        -метод возвращает следующий элемент, если элементов нету
-//        NoSuchElementException
-//        void remove (); -метод удаляет последний возвращенный элемент, если итератор еще не возвращал
-//        элемента еще нету - IllegalStateException
+        next();
 
         return null;
     }
-    /*BODY*/
+
+    private void hasNext() {
+
+
+    }
+
+    E next() {
+        try {
+            int index = 0;
+            E dataIndex = data[index];
+            return dataIndex;
+        } catch (NullPointerException e) {
+            throw new NoSuchElementException();
+        }
+
+
+    }
+
 
 }
 
+
+
+
 interface SimpleList<E> {
     public boolean add(E newElement);
+
     public E get(int index);
+
     public Iterator<E> iterator();
+
     public int size();
+
     public boolean isEmpty();
+
     public E remove(int index);
-} 
+}
