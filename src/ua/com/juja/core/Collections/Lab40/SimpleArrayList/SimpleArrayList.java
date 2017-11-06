@@ -1,6 +1,5 @@
 package ua.com.juja.core.Collections.Lab40.SimpleArrayList;
 
-import com.sun.xml.internal.fastinfoset.stax.events.ReadIterator;
 
 import java.util.Iterator;
 import java.util.ConcurrentModificationException;
@@ -76,6 +75,7 @@ public class SimpleArrayList<E> implements SimpleList<E> {
 
         return new SimpleArrayListIterator();
     }
+
 
 
     private class SimpleArrayListIterator implements
