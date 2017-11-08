@@ -7,6 +7,32 @@ import java.util.NoSuchElementException;
 
 public class SimpleArrayList<E> implements SimpleList<E> {
 
+
+    public static void main(String[] args) {
+        Integer[] listElements = {1, 2, 3, 4, 5, 6, 7};
+        Integer[] expectedElements = {2, 3, 4, 5, 6, 7};
+
+        SimpleArrayList<Integer> arrayList = new SimpleArrayList<>();
+
+        for (int i = 0; i < listElements.length; i++) {
+            arrayList.add(listElements[i]);
+        }
+
+        SimpleArrayList<Integer> expectedArrayList = new SimpleArrayList<>();
+
+        for (int i = 0; i < expectedElements.length; i++) {
+            expectedArrayList.add(expectedElements[i]);
+        }
+
+        Iterator<Integer> iterator = null;
+        iterator = arrayList.iterator();
+
+        iterator.next();
+        iterator.remove();
+
+
+    }
+
     private static final int DEFAULT_INITIAL_CAPACITY = 16;
     private E[] data;
     private int size = 0;
@@ -79,32 +105,39 @@ public class SimpleArrayList<E> implements SimpleList<E> {
 
     private class SimpleArrayListIterator implements
             Iterator<E> {
-        private int cursor;
-
-        public SimpleArrayListIterator() {
-            this.cursor = 0;
-        }
+        private int cursor = 0;
+        private SimpleArrayList<E> simpleArrayList = new SimpleArrayList();
+        E current;
+        private int lastRet;
 
         public boolean hasNext() {
             return cursor != size;
         }
 
         public E next() {
-            E current;
-            if (data[cursor] == null) {
-                throw new NoSuchElementException();
-            } else
-                current = data[cursor];
-            cursor++;
-            return current;
 
+            if(this.hasNext()) {
+                E current = data[cursor];
+                lastRet = cursor;
+                cursor ++;
+                return current;
+            }
+            throw new NoSuchElementException();
         }
 
         public void remove() {
-            throw new UnsupportedOperationException();
+            if (lastRet < 0)
+                throw new IllegalStateException();
+
+            try {
+                SimpleArrayList.this.remove(lastRet);
+                cursor = lastRet;
+                lastRet = -1;
+            } catch (IndexOutOfBoundsException ex) {
+                throw new ConcurrentModificationException();
+            }
         }
     }
-
 
 }
 

@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
 
 import static org.junit.Assert.*;
 
-public class TestOneElement {
+public class TestNext {
 
 
     @Test
