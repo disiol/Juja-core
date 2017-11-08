@@ -1,12 +1,12 @@
 package ua.com.juja.core.Collections.Lab40.SimpleArrayList;
 
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.ConcurrentModificationException;
 import java.util.NoSuchElementException;
 
 public class SimpleArrayList<E> implements SimpleList<E> {
-
 
     public static void main(String[] args) {
         Integer[] listElements = {1, 2, 3, 4, 5, 6, 7};
@@ -103,8 +103,11 @@ public class SimpleArrayList<E> implements SimpleList<E> {
     }
 
 
+
     private class SimpleArrayListIterator implements
             Iterator<E> {
+
+
         private int cursor = 0;
         private SimpleArrayList<E> simpleArrayList = new SimpleArrayList();
         E current;
@@ -116,10 +119,10 @@ public class SimpleArrayList<E> implements SimpleList<E> {
 
         public E next() {
 
-            if(this.hasNext()) {
-                E current = data[cursor];
+            if (this.hasNext()) {
                 lastRet = cursor;
-                cursor ++;
+                cursor++;
+                E current = data[cursor - 1];
                 return current;
             }
             throw new NoSuchElementException();
@@ -137,8 +140,45 @@ public class SimpleArrayList<E> implements SimpleList<E> {
                 throw new ConcurrentModificationException();
             }
         }
+
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SimpleArrayList)) return false;
+
+        SimpleArrayList<?> that = (SimpleArrayList<?>) o;
+
+        if (size != that.size) return false;
+        // Probably incorrect - comparing Object[] arrays with Arrays.equals
+        return Arrays.equals(data, that.data);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Arrays.hashCode(data);
+        result = 31 * result + size;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        String result = "[";
+        int last = size - 1;
+
+        if ( size == 0 ) {
+            return result = "[" + "]";
+        }
+
+        for ( int i = 0; i < last; i++ ) {
+            result += data[i].toString() + ", ";
+        }
+
+        result += data[last] + "]";
+
+        return result;
+    }
 }
 
 

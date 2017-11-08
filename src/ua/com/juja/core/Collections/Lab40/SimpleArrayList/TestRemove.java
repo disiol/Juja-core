@@ -1,8 +1,14 @@
 package ua.com.juja.core.Collections.Lab40.SimpleArrayList;
 
+import org.junit.Test;
+
 import java.util.Iterator;
+
+import static junit.framework.TestCase.*;
+
 public class TestRemove {
-    public static void main(String[] args) {
+    @Test
+    public  void testRemove() {
 
         Integer[] listElements = {1, 2, 3, 4, 5, 6, 7};
         Integer[] expectedElements = {2, 3, 4, 5, 6, 7};
@@ -19,6 +25,7 @@ public class TestRemove {
             expectedArrayList.add(expectedElements[i]);
         }
 
+
         //call and check
         Iterator<Integer> iterator = null;
         try {
@@ -27,8 +34,7 @@ public class TestRemove {
             throw new AssertionError("Iterator not implemented");
         }
 
-        if (iterator == null)
-            throw new AssertionError("Iterator must be no equals null");
+            assertNotNull("Iterator must be no equals null",iterator);
 
         try {
             iterator.next();
@@ -37,9 +43,10 @@ public class TestRemove {
             throw new AssertionError("Non-expected throw IllegalStateException form iterator.remove()");
         }
 
-        if (!arrayList.equals(expectedArrayList))
-            throw new AssertionError("actual data is not equal to expected data");
 
-        System.out.print("OK");
+
+            assertEquals("actual data is not equal to expected data",expectedArrayList,arrayList);
+
+
     }
 }
