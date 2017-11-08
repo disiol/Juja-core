@@ -24,7 +24,6 @@ public class RateMatrix {
         int newArray[][] = new int[columnLength][columnLength];
 
 
-
         rateMatrix(oldArray, columnLength, newArray);
 
         printMaprix(columnLength, newArray);

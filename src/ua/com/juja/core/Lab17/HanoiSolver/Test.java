@@ -4,6 +4,7 @@ package ua.com.juja.core.Lab17.HanoiSolver;
  * Created by Denis Oleynyk on 10.07.17.
  * mail: deoniisii@gmail.com
  */
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -23,6 +24,7 @@ public class Test extends Stack<Integer> {
         actualHistory.add(role + ".push(" + value + ")");
         return super.push(value);
     }
+
     public Integer pop() {
         actualHistory.add(role + ".pop()");
         return super.pop();

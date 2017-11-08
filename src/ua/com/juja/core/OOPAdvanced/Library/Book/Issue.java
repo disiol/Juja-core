@@ -10,7 +10,7 @@ public class Issue {
     }
 
     public String toPrint() {
-        return "name=" + name + 
+        return "name=" + name +
                 ",countPages=" + countPages;
     }
 

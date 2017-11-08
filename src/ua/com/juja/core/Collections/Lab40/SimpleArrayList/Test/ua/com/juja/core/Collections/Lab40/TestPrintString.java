@@ -1,4 +1,4 @@
-package ua.com.juja.core.Collections.Lab40.SimpleArrayList.Test;
+package ua.com.juja.core.Collections.Lab40;
 
 import org.junit.Test;
 import ua.com.juja.core.Collections.Lab40.SimpleArrayList.SimpleArrayList;
@@ -10,7 +10,7 @@ import static junit.framework.TestCase.assertEquals;
 public class TestPrintString {
 
     @Test
-    public  void TestPrintString() {
+    public void TestPrintString() {
         Integer[] expectedElements = {1, 2, 3, 4, 5, 6, 7};
         String expectedPrintString = "[1, 2, 3, 4, 5, 6, 7]";
 

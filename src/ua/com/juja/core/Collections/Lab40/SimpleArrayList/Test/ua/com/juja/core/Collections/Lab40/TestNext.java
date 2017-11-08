@@ -1,6 +1,5 @@
-package ua.com.juja.core.Collections.Lab40.SimpleArrayList.Test;
+package ua.com.juja.core.Collections.Lab40;
 
-import org.junit.Before;
 import org.junit.Test;
 import ua.com.juja.core.Collections.Lab40.SimpleArrayList.SimpleArrayList;
 

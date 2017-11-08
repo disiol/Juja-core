@@ -12,10 +12,10 @@ public class InsertionSorter2 {
         for (int i = 0; i < arr.length; i++) {
             tmp = arr[i];
             for (j = i - 1; j >= 0 && arr[j] > tmp; j--) {
-                arr[j +1] = arr[j];
+                arr[j + 1] = arr[j];
 
             }
-            arr[j +1] = tmp;
+            arr[j + 1] = tmp;
 
         }
 

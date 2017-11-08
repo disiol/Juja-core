@@ -21,9 +21,8 @@ public class Test {
         //check payment if rent tax is negative
         float actualCargoPaymentRentTaxNegative = cargo.calculatePayment(testRentTaxNegative);
 
-            assertEquals(expectedCargoPaymentRentTaxDefault,
-                    actualCargoPaymentRentTaxNegative, "Rent tax is negative= " + testRentTaxNegative + " and expected payment value= ");
-
+        assertEquals(expectedCargoPaymentRentTaxDefault,
+                actualCargoPaymentRentTaxNegative, "Rent tax is negative= " + testRentTaxNegative + " and expected payment value= ");
 
 
     }

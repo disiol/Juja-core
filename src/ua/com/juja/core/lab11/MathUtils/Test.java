@@ -12,13 +12,14 @@ public class Test {
         System.out.println(Test_4());
 
     }
+
     public static String Test_1() {
         System.out.println("MathUtils.lookFor(1) != 0");
         if (MathUtils.lookFor(1) != 0) {
             throw new AssertionError();
         }
 
-       return "OK";
+        return "OK";
     }
 
     public static String Test_2() {
@@ -29,6 +30,7 @@ public class Test {
 
         return "OK";
     }
+
     public static String Test_3() {
         System.out.println(MathUtils.lookFor(5) != 3);
         if (MathUtils.lookFor(5) != 3) {
@@ -37,6 +39,7 @@ public class Test {
 
         return "OK";
     }
+
     public static String Test_4() {
         System.out.println(MathUtils.lookFor(8) != 4);
         if (MathUtils.lookFor(8) != 4) {

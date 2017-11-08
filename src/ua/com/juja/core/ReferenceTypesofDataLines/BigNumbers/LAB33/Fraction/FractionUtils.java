@@ -18,7 +18,7 @@ public class FractionUtils {
             fractionSum[0] = x[0].add(y[0]);// сложение числителей дроби
             fractionSum[1] = y[1];//знаменатель
         } else {
-            fractionSum =  additionOfFractions(x, y);
+            fractionSum = additionOfFractions(x, y);
         }
 
         //сократить полученную дробь
@@ -30,7 +30,7 @@ public class FractionUtils {
     //сложение дробей
     private static BigInteger[] additionOfFractions(BigInteger[] x, BigInteger[] y) {
 
-        BigInteger []sum = new BigInteger[2];
+        BigInteger[] sum = new BigInteger[2];
 
 
         BigInteger numeratorX = x[0];
@@ -38,7 +38,7 @@ public class FractionUtils {
         BigInteger numeratorY = y[0];
         BigInteger denominatorY = y[1];
 
-        sum[0] = (numeratorX.multiply(denominatorY)).add(numeratorY.multiply(denominatorX)) ;
+        sum[0] = (numeratorX.multiply(denominatorY)).add(numeratorY.multiply(denominatorX));
         sum[1] = denominatorX.multiply(denominatorY);
 
 
@@ -46,9 +46,9 @@ public class FractionUtils {
     }
 
 
-    private static BigInteger[] abbreviationOfFraction(BigInteger[] x){
-        BigInteger  greatestCommonDivisor; //наибольший общий делитель
-        BigInteger [] fraction = new BigInteger[2];
+    private static BigInteger[] abbreviationOfFraction(BigInteger[] x) {
+        BigInteger greatestCommonDivisor; //наибольший общий делитель
+        BigInteger[] fraction = new BigInteger[2];
 
         BigInteger numeratorX = x[0];
         BigInteger denominatorX = x[1];
@@ -56,9 +56,6 @@ public class FractionUtils {
         greatestCommonDivisor = numeratorX.gcd(denominatorX);
         fraction[0] = numeratorX.divide(greatestCommonDivisor);
         fraction[1] = denominatorX.divide(greatestCommonDivisor);
-
-
-
 
 
         //Чтобы сократить дробь   m n  нужно найти наибольший общий делитель ее числителя и знаменателя: НОД(m,n),

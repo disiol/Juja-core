@@ -161,14 +161,13 @@ class OdessaSeaPort implements SeaPortQueue {
             String Ships = "";
             //печать информации о корабле
             for (int i = 0; i < arrayShip.length; i++) {
-                if(arrayShip[i] != null) {
+                if (arrayShip[i] != null) {
                     Ships += "{" + arrayShip[i].toPrint() + "};";
                 }
             }
 
             return Ships;
         }
-
 
 
     }
@@ -186,9 +185,6 @@ class OdessaSeaPort implements SeaPortQueue {
         }
         return symbols;
     }
-
-
-
 
 
 }

@@ -109,7 +109,7 @@ class OdessaSeaPort {
 
     public static String sortSumPaymentAsc(AbstractShip[] arrayShips) {
         String arrayShipsSotrts = "";
-        if (arrayShips == null||arrayShips.length == 0 ) {
+        if (arrayShips == null || arrayShips.length == 0) {
             return arrayShipsSotrts = "";
         }
 
@@ -141,7 +141,6 @@ class OdessaSeaPort {
 
         return arrayShipsSotrts.toString();
     }
-
 
 
 }

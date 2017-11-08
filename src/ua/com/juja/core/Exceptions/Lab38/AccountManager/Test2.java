@@ -5,7 +5,6 @@ import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 public class Test2 {
     private static boolean actualResultTransfer;

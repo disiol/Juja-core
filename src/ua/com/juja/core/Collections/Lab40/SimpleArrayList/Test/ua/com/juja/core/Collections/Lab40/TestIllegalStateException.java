@@ -1,4 +1,4 @@
-package ua.com.juja.core.Collections.Lab40.SimpleArrayList.Test;
+package ua.com.juja.core.Collections.Lab40.SimpleArrayList.Test.ua.com.juja.core.Collections.Lab40;
 
 import ua.com.juja.core.Collections.Lab40.SimpleArrayList.SimpleArrayList;
 

@@ -39,10 +39,11 @@ public class TestsParser1 {
         Assertions.assertEquals(1 + (5 - 2 * (13 / 6)), Parser1.eval("1+(5-2*(13/6))"));
 
     }
+
     @Test
     public void Test5() {
         Parser1 parser1 = new Parser1();
-        Assertions.assertEquals((10-3), Parser1.eval("1*(10-3)"));
+        Assertions.assertEquals((10 - 3), Parser1.eval("1*(10-3)"));
 
     }
 }

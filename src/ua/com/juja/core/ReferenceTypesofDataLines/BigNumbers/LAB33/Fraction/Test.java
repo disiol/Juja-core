@@ -13,7 +13,7 @@ public class Test {
         BigInteger[] expected = {new BigInteger("1"), new BigInteger("1")};
         BigInteger[] actual = FractionUtils.sum(x, y);
 
-        assertEquals(Arrays.toString(expected),Arrays.toString(actual));
+        assertEquals(Arrays.toString(expected), Arrays.toString(actual));
 
 
     }

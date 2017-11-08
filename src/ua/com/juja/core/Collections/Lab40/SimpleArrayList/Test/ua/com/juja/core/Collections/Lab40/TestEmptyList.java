@@ -1,4 +1,4 @@
-package ua.com.juja.core.Collections.Lab40.SimpleArrayList.Test;
+package ua.com.juja.core.Collections.Lab40.SimpleArrayList.Test.ua.com.juja.core.Collections.Lab40;
 
 import org.junit.Before;
 import ua.com.juja.core.Collections.Lab40.SimpleArrayList.SimpleArrayList;
@@ -11,7 +11,7 @@ import static org.junit.Assert.assertFalse;
 
 public class TestEmptyList {
 
-    private Iterator<Integer> iterator;
+    private Iterator<Integer> iterator = null;
 
     @Before
     public void before() {

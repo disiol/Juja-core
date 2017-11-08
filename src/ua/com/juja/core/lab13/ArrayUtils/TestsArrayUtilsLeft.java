@@ -1,7 +1,5 @@
 package ua.com.juja.core.lab13.ArrayUtils;
 
-import ua.com.juja.core.lab13.ArrayUtils.ArrayUtilsLeft;
-
 import java.util.Arrays;
 
 /**
@@ -41,6 +39,7 @@ public class TestsArrayUtilsLeft {
 
         }
     }
+
     private static void test5() {
         System.out.println("int[] array = {1, 1, 0, 1, 1}");
 

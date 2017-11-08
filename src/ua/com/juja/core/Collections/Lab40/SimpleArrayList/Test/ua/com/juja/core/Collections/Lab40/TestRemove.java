@@ -1,15 +1,16 @@
-package ua.com.juja.core.Collections.Lab40.SimpleArrayList.Test;
+package ua.com.juja.core.Collections.Lab40.SimpleArrayList.Test.ua.com.juja.core.Collections.Lab40;
 
 import org.junit.Test;
 import ua.com.juja.core.Collections.Lab40.SimpleArrayList.SimpleArrayList;
 
 import java.util.Iterator;
 
-import static junit.framework.TestCase.*;
+import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertNotNull;
 
 public class TestRemove {
     @Test
-    public  void testRemove() {
+    public void testRemove() {
 
         Integer[] listElements = {1, 2, 3, 4, 5, 6, 7};
         Integer[] expectedElements = {2, 3, 4, 5, 6, 7};
@@ -35,7 +36,7 @@ public class TestRemove {
             throw new AssertionError("Iterator not implemented");
         }
 
-            assertNotNull("Iterator must be no equals null",iterator);
+        assertNotNull("Iterator must be no equals null", iterator);
 
         try {
             iterator.next();
@@ -44,12 +45,12 @@ public class TestRemove {
             throw new AssertionError("Non-expected throw IllegalStateException form iterator.remove()");
         }
 
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             System.out.print(iterator.next() + " ");
         }
 
 
-        assertEquals("actual data is not equal to expected data",expectedArrayList,arrayList);
+        assertEquals("actual data is not equal to expected data", expectedArrayList, arrayList);
 
 
     }

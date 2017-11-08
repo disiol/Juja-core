@@ -4,6 +4,7 @@ package ua.com.juja.core.ReferenceTypesofDataLines.BigNumbers.LAB36.multiplicati
  * Created by Denis Oleynyk on 20.09.17.
  * mail: deoniisii@gmail.com
  */
+
 import java.math.BigInteger;
 
 public class PolyUtils {

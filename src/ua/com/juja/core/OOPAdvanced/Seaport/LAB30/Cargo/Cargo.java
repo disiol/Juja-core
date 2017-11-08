@@ -23,7 +23,7 @@ public class Cargo extends AbstractShip {
     public float calculatePayment(float rentTaxNegative) {
         if (rentTaxNegative <= 0) {
             rental = tonnage * DEFAULT_RENTAL;
-        }else {
+        } else {
             rental = rentTaxNegative * tonnage;
         }
         return rental;

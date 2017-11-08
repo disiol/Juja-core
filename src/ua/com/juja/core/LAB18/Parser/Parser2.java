@@ -19,7 +19,7 @@ public class Parser2 {
                 if (Character.isDigit(expr.charAt(pos))) {
                     pos--;
                 } else {
-                    int rightOperand = Integer.valueOf(expr.substring(pos + 1, from+1));
+                    int rightOperand = Integer.valueOf(expr.substring(pos + 1, from + 1));
                     char operation = expr.charAt(pos);
                     int leftOperand = eval(expr, pos - 1, to);
 

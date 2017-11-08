@@ -11,9 +11,11 @@ public class Parser1 {
         System.out.println(eval("2*(1+3)"));
         System.out.println(eval("1+(5-2*(13/6))"));
     }
+
     public static int eval(String expr) {
         return eval(expr, 0, expr.length());
     }
+
     private static int eval(String expr, int from, int to) {
         if (expr.charAt(from) == '(') {
             return eval(expr, from + 1, to - 1);

@@ -40,6 +40,7 @@ public class TestBubbleSorter {
         System.out.println();
         System.out.print("OK");
     }
+
     private static void TestLeft() {
         long start = System.nanoTime();
 

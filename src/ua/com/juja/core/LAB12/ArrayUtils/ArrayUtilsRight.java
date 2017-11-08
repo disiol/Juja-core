@@ -43,7 +43,7 @@ public class ArrayUtilsRight {
 
         for (int i = 0; i < array.length; i++) {
             if (array[i] > 0) {
-                if ( currentSequenceLength == 0 ) {
+                if (currentSequenceLength == 0) {
                     firstIndex = i;
                 }
 

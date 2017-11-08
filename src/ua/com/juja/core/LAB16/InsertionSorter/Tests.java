@@ -10,7 +10,7 @@ public class Tests {
 
     public static void main(String[] args) {
         // fill elements
-        int[] array = new int[]{2, 1,6,7,8,9};
+        int[] array = new int[]{2, 1, 6, 7, 8, 9};
         // library sort
         int[] expected = array.clone();
         Arrays.sort(expected);

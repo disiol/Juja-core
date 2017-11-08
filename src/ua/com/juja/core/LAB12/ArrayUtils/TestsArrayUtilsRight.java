@@ -41,6 +41,7 @@ public class TestsArrayUtilsRight {
 
 
     }
+
     private static void test5() {
         System.out.println("0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0");
         int[] array = {0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0};

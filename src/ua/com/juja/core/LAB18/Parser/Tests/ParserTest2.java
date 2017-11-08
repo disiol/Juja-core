@@ -47,7 +47,7 @@ public class ParserTest2 {
     @Test
     public void Test6() {
         Parser2 parser2 = new Parser2();
-        Assertions.assertEquals(123+321, Parser2.eval("123+321"));
+        Assertions.assertEquals(123 + 321, Parser2.eval("123+321"));
 
     }
 }

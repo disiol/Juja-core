@@ -22,8 +22,8 @@ public class Test {
         //check payment if rent tax is negative
         float actualTankerPaymentRentTaxNegative = tanker.calculatePayment(testRentTaxNegative);
 
-             assertEquals("Rent tax is negative= " + testRentTaxNegative + " and expected payment value= " ,
-                     expectedTankerPaymentRentTaxDefault,actualTankerPaymentRentTaxNegative);
+        assertEquals("Rent tax is negative= " + testRentTaxNegative + " and expected payment value= ",
+                expectedTankerPaymentRentTaxDefault, actualTankerPaymentRentTaxNegative);
 
     }
 
@@ -42,8 +42,8 @@ public class Test {
         //check payment if rent tax is default
         float actualTankerPaymentRentTaxDefault = tanker.calculatePayment();
         if (actualTankerPaymentRentTaxDefault != expectedTankerPaymentRentTaxDefault)
-             assertEquals("Rent tax is default= " + Tanker.DEFAULT_RENTAL + " and expected payment value= ",
-                     expectedTankerPaymentRentTaxDefault,actualTankerPaymentRentTaxDefault);
+            assertEquals("Rent tax is default= " + Tanker.DEFAULT_RENTAL + " and expected payment value= ",
+                    expectedTankerPaymentRentTaxDefault, actualTankerPaymentRentTaxDefault);
 
 
     }

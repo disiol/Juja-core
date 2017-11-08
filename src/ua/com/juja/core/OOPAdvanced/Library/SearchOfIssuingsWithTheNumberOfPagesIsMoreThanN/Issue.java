@@ -24,7 +24,7 @@ class Issue {
         return countPages;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 

@@ -2,8 +2,8 @@ package ua.com.juja.core.Collections.Lab40.SimpleArrayList;
 
 
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.ConcurrentModificationException;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class SimpleArrayList<E> implements SimpleList<E> {
@@ -112,10 +112,12 @@ public class SimpleArrayList<E> implements SimpleList<E> {
         E current;
         private int lastRet;
 
+        @Override
         public boolean hasNext() {
             return cursor != size;
         }
 
+        @Override
         public E next() {
 
             if (this.hasNext()) {
@@ -127,6 +129,7 @@ public class SimpleArrayList<E> implements SimpleList<E> {
             throw new NoSuchElementException();
         }
 
+        @Override
         public void remove() {
             if (cursor <= 0)
                 throw new IllegalStateException();

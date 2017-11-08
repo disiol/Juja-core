@@ -10,7 +10,7 @@ public class Library {
             return "";
         } else {
             for (int i = 0; i < catalog.length; i++) {
-                if(catalog[i].getCountPages() > barrierCountPages) {
+                if (catalog[i].getCountPages() > barrierCountPages) {
                     info += catalog[i].toPrint();
                 }
                 System.out.println(info);

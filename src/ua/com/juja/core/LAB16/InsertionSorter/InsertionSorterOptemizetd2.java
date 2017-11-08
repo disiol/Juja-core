@@ -40,7 +40,7 @@ public class InsertionSorterOptemizetd2 {
             int counterShift = 0;
 
             if (location >= 0 && arr[location] > newElement) {
-               Arrays.binarySearch(arr,newElement);
+                Arrays.binarySearch(arr, newElement);
                 counterShift++;
                 location--;
             }

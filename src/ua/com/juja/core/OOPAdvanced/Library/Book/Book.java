@@ -17,7 +17,7 @@ class Book extends Issue {
 
     @Override
     public String toPrint() {
-        return "Book"+"{"+super.toPrint() + ",author="+ authorBook +"}";
+        return "Book" + "{" + super.toPrint() + ",author=" + authorBook + "}";
     }
 
 

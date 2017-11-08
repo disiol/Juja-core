@@ -41,7 +41,7 @@ public class Test2 {
         //check print queue ship
         String actualPrintQueueShip = odessaSeaPort.printQueueShip();
 
-            assertEquals("Expected to be printed " ,expectedResultPrintShipQueue,actualPrintQueueShip);
+        assertEquals("Expected to be printed ", expectedResultPrintShipQueue, actualPrintQueueShip);
 
 
     }

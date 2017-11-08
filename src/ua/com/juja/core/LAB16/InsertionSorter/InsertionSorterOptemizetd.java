@@ -1,7 +1,5 @@
 package ua.com.juja.core.LAB16.InsertionSorter;
 
-import java.util.Arrays;
-
 /**
  * Created by Denis Oleynyk on 06.07.17.
  * mail: deoniisii@gmail.com
