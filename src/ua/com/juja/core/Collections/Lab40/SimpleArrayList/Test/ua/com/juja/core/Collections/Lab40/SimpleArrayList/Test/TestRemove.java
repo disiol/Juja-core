@@ -1,6 +1,7 @@
-package ua.com.juja.core.Collections.Lab40.SimpleArrayList;
+package ua.com.juja.core.Collections.Lab40.SimpleArrayList.Test;
 
 import org.junit.Test;
+import ua.com.juja.core.Collections.Lab40.SimpleArrayList.SimpleArrayList;
 
 import java.util.Iterator;
 
@@ -43,9 +44,12 @@ public class TestRemove {
             throw new AssertionError("Non-expected throw IllegalStateException form iterator.remove()");
         }
 
+        while (iterator.hasNext()){
+            System.out.print(iterator.next() + " ");
+        }
 
 
-            assertEquals("actual data is not equal to expected data",expectedArrayList,arrayList);
+        assertEquals("actual data is not equal to expected data",expectedArrayList,arrayList);
 
 
     }

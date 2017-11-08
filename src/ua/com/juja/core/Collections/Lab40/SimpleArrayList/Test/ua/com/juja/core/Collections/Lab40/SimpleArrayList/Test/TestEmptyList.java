@@ -1,6 +1,7 @@
-package ua.com.juja.core.Collections.Lab40.SimpleArrayList;
+package ua.com.juja.core.Collections.Lab40.SimpleArrayList.Test;
 
 import org.junit.Before;
+import ua.com.juja.core.Collections.Lab40.SimpleArrayList.SimpleArrayList;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

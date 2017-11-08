@@ -103,12 +103,11 @@ public class SimpleArrayList<E> implements SimpleList<E> {
     }
 
 
-
     private class SimpleArrayListIterator implements
             Iterator<E> {
 
 
-        private int cursor = 0;
+        private int cursor;
         private SimpleArrayList<E> simpleArrayList = new SimpleArrayList();
         E current;
         private int lastRet;
@@ -129,7 +128,7 @@ public class SimpleArrayList<E> implements SimpleList<E> {
         }
 
         public void remove() {
-            if (lastRet < 0)
+            if (cursor <= 0)
                 throw new IllegalStateException();
 
             try {
@@ -167,11 +166,11 @@ public class SimpleArrayList<E> implements SimpleList<E> {
         String result = "[";
         int last = size - 1;
 
-        if ( size == 0 ) {
+        if (size == 0) {
             return result = "[" + "]";
         }
 
-        for ( int i = 0; i < last; i++ ) {
+        for (int i = 0; i < last; i++) {
             result += data[i].toString() + ", ";
         }
 
