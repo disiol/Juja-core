@@ -6,9 +6,9 @@ import java.util.Iterator;
 
 import static junit.framework.TestCase.assertTrue;
 
-public class Test {
+public class TestIllegalStateException {
     @org.junit.Test
-    public void main() {
+    public void TestIllegalStateException() {
 
         Integer[] expectedElements = {1, 2, 3, 4, 5, 6, 7};
 
