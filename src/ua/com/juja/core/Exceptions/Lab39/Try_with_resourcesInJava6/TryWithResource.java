@@ -12,16 +12,16 @@ public class TryWithResource {
             a = factoryA.create();
             try {
                 b = factoryB.create();
-            } catch (Throwable throwable) {
+            } catch (Throwable bodyEx) {
                 try {
                     if (b!= null) {
                         b.close();
                     }
                 } catch (Throwable closeEx) {
-                    closeEx.addSuppressed(closeEx);
+                    bodyEx.addSuppressed(closeEx);
                 }
 
-                throw throwable;
+                throw bodyEx;
             }
             body.runBody();
         } catch (Throwable bodyEx) {

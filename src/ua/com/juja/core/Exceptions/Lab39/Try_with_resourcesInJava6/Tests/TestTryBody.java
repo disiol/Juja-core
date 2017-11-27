@@ -73,10 +73,11 @@ public class TestTryBody {
             assertEquals("Not correct main exception should to be ", expectedExceptionTextAndOrder.get(0), e.getMessage());
 
             assertEquals("Should to be suppressed exceptions", 1, e.getSuppressed().length);
-             assertEquals("Should to be suppressed exceptions ",expectedExceptionTextAndOrder.get(1),e.getSuppressed().length);
+
+            assertEquals("Should to be suppressed exceptions ", expectedExceptionTextAndOrder.get(1), e.getSuppressed().length);
         }
 
-             assertEquals("Not correct order call should be ",expectedHistoryCall,actualHistoryCall);
+        assertEquals("Not correct order call should be ", expectedHistoryCall, actualHistoryCall);
 
         System.out.print("OK");
     }
