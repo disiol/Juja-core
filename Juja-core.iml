@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/ua/com/juja/core/Collections/Lab40/SimpleArrayList/Test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/ua/com/juja/core/Collections/Lab41/SimpleLinkedList/Test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ua/com/juja/core/Exceptions/Lab39/Try_with_resourcesInJava6/Tests" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

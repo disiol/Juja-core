@@ -2,6 +2,8 @@ package ua.com.juja.core.Matrix.LAB22.rateMatrix.Test;
 
 import ua.com.juja.core.Matrix.LAB22.rateMatrix.RateMatrix;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
@@ -29,7 +31,7 @@ public class Test {
         int[][] oldArray = {{1}};
         int[][] newExpectedArray = {{1}};
         int[][] newActualArray = RateMatrix.rotateClockwise(oldArray);
-        assertEquals(newActualArray, newExpectedArray, " [1] -> [1]");
+        assertEquals(Arrays.toString(newActualArray), Arrays.toString(newExpectedArray), " [1] -> [1]");
     }
 
     @org.junit.jupiter.api.Test

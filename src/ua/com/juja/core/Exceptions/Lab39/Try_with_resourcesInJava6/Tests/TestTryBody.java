@@ -1,6 +1,7 @@
-package ua.com.juja.core.Exceptions.Lab39.Try_with_resourcesInJava6;
-
 import org.junit.Test;
+import ua.com.juja.core.Exceptions.Lab39.Try_with_resourcesInJava6.AutoCloseableFactory;
+import ua.com.juja.core.Exceptions.Lab39.Try_with_resourcesInJava6.TryBody;
+import ua.com.juja.core.Exceptions.Lab39.Try_with_resourcesInJava6.TryWithResource;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,21 +9,23 @@ import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
 
-public class TestResourceA {
-
+public class TestTryBody {
     @Test
-    public  void main()  {
+    public void main() throws Throwable {
         //prepare
         final List<String> actualHistoryCall = new ArrayList<String>();
         final List<String> expectedExceptionTextAndOrder = new ArrayList<String>();
-        expectedExceptionTextAndOrder.add("Error factoryA.createA");
-        List<String> expectedHistoryCall = Arrays.asList("factoryA.createA");
+        expectedExceptionTextAndOrder.add("Error TryBody.runBody");
+        expectedExceptionTextAndOrder.add("Error closeB");
 
+
+        List<String> expectedHistoryCall = Arrays.asList("factoryA.createA", "factoryB.createB", "TryBody.runBody", "B.close", "A.close");
 
         final AutoCloseable resourceA = new AutoCloseable() {
             @Override
             public void close() throws Exception {
                 actualHistoryCall.add("A.close");
+
             }
         };
 
@@ -30,6 +33,7 @@ public class TestResourceA {
             @Override
             public void close() throws Exception {
                 actualHistoryCall.add("B.close");
+                throw new Error(expectedExceptionTextAndOrder.get(1));
             }
         };
 
@@ -37,7 +41,8 @@ public class TestResourceA {
             @Override
             public AutoCloseable create() throws Throwable {
                 actualHistoryCall.add("factoryA.createA");
-                throw new Error(expectedExceptionTextAndOrder.get(0));
+                return resourceA;
+
             }
 
 
@@ -57,27 +62,23 @@ public class TestResourceA {
             @Override
             public void runBody() {
                 actualHistoryCall.add("TryBody.runBody");
-                //NOP
+                throw new Error(expectedExceptionTextAndOrder.get(0));
             }
         };
 
         //call and  check
         try {
             TryWithResource.twoResource(factoryA, factoryB, tryBody);
-        } catch (Throwable e) {
+        } catch (Error e) {
+            assertEquals("Not correct main exception should to be ", expectedExceptionTextAndOrder.get(0), e.getMessage());
 
-            if (!expectedExceptionTextAndOrder.get(0).equals(e.getMessage()))
-                throw new AssertionError("Not correct main exception");
-            assertEquals("Not correct main exception",expectedExceptionTextAndOrder.get(0).toString(),e.getMessage());
-
-            if (e.getSuppressed().length != 0)
-                throw new AssertionError("Should not be suppressed exceptions  " + e.getSuppressed().length);
+            assertEquals("Should to be suppressed exceptions", 1, e.getSuppressed().length);
+             assertEquals("Should to be suppressed exceptions ",expectedExceptionTextAndOrder.get(1),e.getSuppressed().length);
         }
 
+             assertEquals("Not correct order call should be ",expectedHistoryCall,actualHistoryCall);
 
-        if (!actualHistoryCall.equals(expectedHistoryCall))
-            throw new AssertionError("Not correct order call should be " + expectedHistoryCall.toString() + " but found " + actualHistoryCall.toString());
-
+        System.out.print("OK");
     }
-
 }
+

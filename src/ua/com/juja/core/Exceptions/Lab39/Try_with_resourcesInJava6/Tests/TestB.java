@@ -3,6 +3,9 @@ package ua.com.juja.core.Exceptions.Lab39.Try_with_resourcesInJava6;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import ua.com.juja.core.Exceptions.Lab39.Try_with_resourcesInJava6.AutoCloseableFactory;
+import ua.com.juja.core.Exceptions.Lab39.Try_with_resourcesInJava6.TryBody;
+import ua.com.juja.core.Exceptions.Lab39.Try_with_resourcesInJava6.TryWithResource;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -74,13 +77,12 @@ public class TestB {
 
             assertEquals("Should be suppressed exceptions", 1, e.getSuppressed().length);
 
-            if (!expectedExceptionTextAndOrder.get(1).equals(e.getSuppressed()[0].getMessage()))
-                assertEquals("Not correct suppressed exception should to be " + expectedExceptionTextAndOrder.get(1) +
-                        " but found " + e.getSuppressed()[0].getMessage(),expectedExceptionTextAndOrder.get(1),e.getSuppressed()[0].getMessage());
+            assertEquals("Not correct suppressed exception should to be " + expectedExceptionTextAndOrder.get(1) +
+                    " but found " + e.getSuppressed()[0].getMessage(), expectedExceptionTextAndOrder.get(1), e.getSuppressed()[0].getMessage());
         }
 
 
-            assertEquals("Not correct order call should be ",expectedHistoryCall,actualHistoryCall);
+        assertEquals("Not correct order call should be ", expectedHistoryCall, actualHistoryCall);
 
 
     }
