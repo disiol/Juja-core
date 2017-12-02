@@ -21,7 +21,6 @@ public class Liner extends AbstractShip {
     }
 
     public float calculatePayment(float rentTaxNegative) {
-        //TODO  Количество пассажиров * Рентный налог судна.  Типы данных параметра float. Формула для расчета не меняется.
         // Если передается отрицательное значение рентной ставки или 0 то использовать дефолтное значение для этого типа корабля.
         if (rentTaxNegative <= 0) {
             rentTaxNegative = DEFAULT_RENTAL;
