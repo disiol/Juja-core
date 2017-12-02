@@ -95,13 +95,14 @@ class Point {
 class EntityInputStream implements EntityInput {
     private DataInput in;
 
-    public EntityInputStream(ByteArrayInputStream in) throws IOException {
+    public EntityInputStream(InputStream in) throws IOException {
         this.in = new DataInputStream(in);
     }
 
     @Override
     public Person readPerson() throws IOException {
-        return null;
+
+        return new Person(in.readUTF(),in.readInt());
     }
 
     @Override

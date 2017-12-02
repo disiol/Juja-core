@@ -1,2 +1,2 @@
 # Juja-core
-Вы полняю лабы с курса по jave /edu.juja.com.ua
+Выполняю лабы с курса по jave /edu.juja.com.ua
