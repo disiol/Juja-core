@@ -112,7 +112,10 @@ class EntityInputStream implements EntityInput {
 
     @Override
     public Point readPoint() throws IOException {
-        return null;
+        int value = in.readByte();
+        int x = value >> 4;
+        int y = value - (x << 4);
+        return new Point(x, y);
     }
  /*BODY*/
 
