@@ -1,7 +1,6 @@
-package ua.com.juja.core.nputOutput.Lab43EntityIOStreams.EntityIOStreamsPreviousSubsection;
+package ua.com.juja.core.inputOutput.Lab43EntityIOStreams.EntityIOStreamsPreviousSubsection;
 
 import org.junit.Test;
-import ua.com.juja.core.nputOutput.Lab43EntityIOStreams.EntityIOStreamsPreviousSubsection.EntityOutputStream;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

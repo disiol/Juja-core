@@ -1,4 +1,4 @@
-package ua.com.juja.core.nputOutput.Lab43EntityIOStreams.EntityIOStreamsPreviousSubsection;
+package ua.com.juja.core.inputOutput.Lab43EntityIOStreams.EntityIOStreamsPreviousSubsection;
 
 import java.io.*;
 
@@ -102,7 +102,12 @@ class EntityInputStream implements EntityInput {
     @Override
     public Person readPerson() throws IOException {
 
-        return new Person(in.readUTF(),in.readInt());
+        int age = in.readInt();
+        String name = null;
+        if (in.readBoolean()) {
+            name = in.readUTF();
+        }
+        return new Person(name, age);
     }
 
     @Override
@@ -110,5 +115,6 @@ class EntityInputStream implements EntityInput {
         return null;
     }
  /*BODY*/
+
 }
 
