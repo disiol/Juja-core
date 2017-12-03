@@ -117,7 +117,6 @@ class EntityInputStream implements EntityInput {
         int y = value - (x << 4);
         return new Point(x, y);
     }
- /*BODY*/
 
 }
 
