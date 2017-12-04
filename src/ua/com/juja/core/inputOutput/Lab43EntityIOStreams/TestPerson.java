@@ -1,4 +1,4 @@
-package ua.com.juja.core.inputOutput.Lab43EntityIOStreams.EntityIOStreamsPreviousSubsection;
+package ua.com.juja.core.inputOutput.Lab43EntityIOStreams;
 
 import org.junit.Test;
 
@@ -8,17 +8,17 @@ import java.io.IOException;
 
 import static junit.framework.TestCase.assertEquals;
 
-public class TestPoint {
+public class TestPerson {
 
     @Test
-    public  void main() throws IOException {
-        Point expectedPoint = new Point(5, 10);
+    public void TestPerson() throws IOException {
 
+        Person expectedPerson = new Person("John", 32);
 
         ByteArrayOutputStream outByteArray = new ByteArrayOutputStream();
         EntityOutputStream outEntity = new EntityOutputStream(outByteArray);
 
-        outEntity.writePoint(expectedPoint);
+        outEntity.writePerson(expectedPerson);
 
         byte[] rawByteArray = outByteArray.toByteArray();
 
@@ -27,16 +27,13 @@ public class TestPoint {
         ByteArrayInputStream in = new ByteArrayInputStream(rawByteArray);
         EntityInputStream stream = new EntityInputStream(in);
 
-        Point actualPoint = stream.readPoint();
+        Person actualPerson = stream.readPerson();
 
         //check
+        assertEquals("Expected Person name equals ", expectedPerson.getName(), actualPerson.getName());
 
 
-            assertEquals("Expected Point X equals",expectedPoint.getX(),actualPoint.getX());
-
-
-            assertEquals("Expected Person Y equals ",expectedPoint.getY(),actualPoint.getY());
-
+        assertEquals("Expected Person age equals ", expectedPerson.getAge(), actualPerson.getAge());
 
     }
 }

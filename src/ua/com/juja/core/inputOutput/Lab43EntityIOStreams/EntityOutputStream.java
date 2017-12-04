@@ -1,4 +1,4 @@
-package ua.com.juja.core.inputOutput.Lab43EntityIOStreams.EntityIOStreamsPreviousSubsection;
+package ua.com.juja.core.inputOutput.Lab43EntityIOStreams;
 
 import java.io.*;
 
