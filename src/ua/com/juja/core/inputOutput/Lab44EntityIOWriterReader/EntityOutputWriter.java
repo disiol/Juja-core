@@ -1,6 +1,7 @@
 package ua.com.juja.core.inputOutput.Lab44EntityIOWriterReader;
 
 import java.io.*;
+import java.util.Arrays;
 
 public class EntityOutputWriter implements EntityOutput {
     private final Writer out;
@@ -57,7 +58,7 @@ class Person {
 
     @Override
     public String toString() {
-        return "Person{name=" + name  + ", age=" + age + "}";
+        return "Person{name=" + name + ", age=" + age + "}";
     }
 }
 
@@ -99,7 +100,27 @@ class EntityInputReader implements EntityInput {
 
     @Override
     public Person readPerson() throws IOException {
-        return null;
+
+
+        BufferedReader bufferedReader = new BufferedReader(in);
+        String line = bufferedReader.readLine();
+        int age = getAge(line);
+        String name = getName(line);
+        return new Person(name, age);
+
+    }
+
+    public int getAge(String line) {
+        int age = 0;
+        String[] tmp =(line.substring(line.indexOf("<age>"), line.indexOf("</age>")).split("<age>"));
+        int index = 1;
+        return age = Integer.parseInt(tmp[index]);
+    }
+    public String getName(String line) {
+        String name = null;
+        String[] tmp =(line.substring(line.indexOf("<name>"), line.indexOf("</name>")).split("<name>"));
+        int index = 1;
+        return name = tmp[index];
     }
 
     @Override
@@ -107,6 +128,5 @@ class EntityInputReader implements EntityInput {
         return null;
     }
 
-  /*BODY*/
 }
 
