@@ -100,8 +100,6 @@ class EntityInputReader implements EntityInput {
 
     @Override
     public Person readPerson() throws IOException {
-
-
         BufferedReader bufferedReader = new BufferedReader(in);
         String line = bufferedReader.readLine();
         int age = getAge(line);
@@ -110,23 +108,45 @@ class EntityInputReader implements EntityInput {
 
     }
 
+
+    @Override
+    public Point readPoint() throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(in);
+        String line = bufferedReader.readLine();
+        int x = getX(line) ;
+        int y = getY(line) ;
+        return new Point(x, y);
+    }
+
+
+    public int getX(String line) {
+        int x = 0;
+        char [] tmp = line.substring(line.indexOf("x="), line.indexOf("y=")).toCharArray();
+        int index = 2;
+        return x = Integer.parseInt(String.valueOf(tmp[index]));
+    }
+
+    public int getY(String line) {
+        int y = 0;
+        String[] tmp = (line.substring(line.indexOf("y="),line.indexOf("></point>")).split("y="));
+        int index = 1;
+        return y = Integer.parseInt(tmp[index]);
+    }
+
     public int getAge(String line) {
         int age = 0;
-        String[] tmp =(line.substring(line.indexOf("<age>"), line.indexOf("</age>")).split("<age>"));
+        String[] tmp = (line.substring(line.indexOf("<age>"), line.indexOf("</age>")).split("<age>"));
         int index = 1;
         return age = Integer.parseInt(tmp[index]);
     }
+
     public String getName(String line) {
         String name = null;
-        String[] tmp =(line.substring(line.indexOf("<name>"), line.indexOf("</name>")).split("<name>"));
+        String[] tmp = (line.substring(line.indexOf("<name>"), line.indexOf("</name>")).split("<name>"));
         int index = 1;
         return name = tmp[index];
     }
 
-    @Override
-    public Point readPoint() throws IOException {
-        return null;
-    }
 
 }
 

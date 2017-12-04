@@ -32,10 +32,9 @@ public class TestPoint {
         //check
 
 
-            assertEquals("Expected Point X equals",expectedPoint.getX(),actualPoint.getX());
+        assertEquals("Expected Point X equals", expectedPoint.getX(), actualPoint.getX());
 
-
-            assertEquals("Expected Person Y equals ",expectedPoint.getY(),actualPoint.getY());
+        assertEquals("Expected Person Y equals ", expectedPoint.getY(), actualPoint.getY());
 
 
     }
